@@ -1,70 +1,46 @@
  <!DOCTYPE html>
 <html lang="kk">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Онлайн Тест — Бағдарламалау Қателері</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Онлайн Тест</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Пароль экраны -->
-    <div id="password-screen" class="screen active">
-        <div class="container">
-            <h1>Тестке кіру</h1>
-            <p>Пароль енгізіңіз</p>
-            <input type="password" id="password-input" placeholder="7777" autocomplete="off">
-            <button onclick="checkPassword()">Кіру</button>
-            <p id="password-error" class="error-message"></p>
-        </div>
-    </div>
+  <!-- Пароль енгізу беті -->
+  <div id="login-page">
+    <h2>Пароль енгізіңіз</h2>
+    <input type="password" id="password-input" placeholder="Пароль">
+    <button onclick="checkPassword()">Кіру</button>
+    <p id="error-message"></p>
+  </div>
 
-    <!-- Басты бет -->
-    <div id="main-screen" class="screen">
-        <div class="container">
-            <header>
-                <h1>Бағдарламалау Қателері</h1>
-                <div class="eye-modes">
-                    <button onclick="toggleDarkMode()">🌙 Dark</button>
-                    <button onclick="toggleEyeComfort()">👁️ Eye Comfort</button>
-                    <button onclick="toggleLargeFont()">🔠 Үлкен шрифт</button>
-                </div>
-            </header>
-            <div class="welcome">
-                <p>Сәлем, Ayan! Дайынсыз ба?</p>
-                <button onclick="startTest()" class="start-btn">Тестті бастау</button>
-            </div>
-            <footer>Жасаған — Ayan KZ</footer>
-        </div>
-    </div>
+  <!-- Басты бет -->
+  <div id="main-page" class="hidden">
+    <h1>Онлайн Тест Сайты</h1>
+    <button onclick="startTest()">Тестті бастау</button>
+  </div>
 
-    <!-- Тест экраны -->
-    <div id="quiz-screen" class="screen">
-        <div class="quiz-header">
-            <div class="progress-container">
-                <span id="q-number">1 / 100</span>
-                <div class="progress-bar"><div id="progress-fill"></div></div>
-            </div>
-            <div id="timer">30:00</div>
-        </div>
-        
-        <div class="question-container">
-            <h2 id="question-text"></h2>
-            <div id="options-container" class="options"></div>
-        </div>
-        
-        <footer>Жасаған — Ayan KZ</footer>
+  <!-- Тест беті -->
+  <div id="test-page" class="hidden">
+    <div id="progress-container">
+      <span id="question-number"></span>
+      <div id="progress-bar"><div id="progress"></div></div>
+      <span id="timer"></span>
     </div>
+    <div id="question-container"></div>
+  </div>
 
-    <!-- Нәтиже экраны -->
-    <div id="results-screen" class="screen">
-        <div class="container">
-            <h1>Тест аяқталды!</h1>
-            <div id="results-content"></div>
-            <button onclick="restartTest()" class="restart-btn">Қайта тапсыру</button>
-            <footer>Жасаған — Ayan KZ</footer>
-        </div>
-    </div>
+  <!-- Нәтиже беті -->
+  <div id="result-page" class="hidden">
+    <h2>Нәтиже</h2>
+    <p id="result-text"></p>
+    <button onclick="restartTest()">Қайта тапсыру</button>
+  </div>
 
-    <script src="script.js"></script>
+  <footer>
+    <p>Жасаған — Ayan KZ</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
