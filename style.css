@@ -1,0 +1,50 @@
+:root {
+    --primary: #4f46e5;
+    --bg: #f3f4f6;
+    --white: #ffffff;
+    --text: #1f2937;
+    --success: #22c55e;
+    --danger: #ef4444;
+}
+
+body {
+    margin: 0; font-family: 'Segoe UI', sans-serif;
+    background-color: var(--bg); color: var(--text);
+    display: flex; justify-content: center; align-items: center; height: 100vh;
+}
+
+.screen { width: 100%; max-width: 500px; padding: 20px; box-sizing: border-box; }
+.hidden { display: none !important; }
+
+.card {
+    background: var(--white); padding: 30px; border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05); text-align: center;
+}
+
+.options-grid { display: grid; gap: 10px; margin-top: 20px; }
+
+.option-btn {
+    padding: 15px; border: 2px solid #e5e7eb; border-radius: 12px;
+    background: white; cursor: pointer; text-align: left; font-size: 16px;
+    transition: 0.2s;
+}
+
+.option-btn:hover { border-color: var(--primary); background: #f9fafb; }
+
+.primary-btn {
+    width: 100%; padding: 15px; background: var(--primary); color: white;
+    border: none; border-radius: 12px; font-weight: bold; cursor: pointer; margin-top: 10px;
+}
+
+.top-bar { margin-bottom: 15px; text-align: left; font-weight: bold; }
+#progress-wrapper { width: 100%; height: 8px; background: #e5e7eb; border-radius: 4px; margin-top: 5px; }
+#progress-fill { height: 100%; background: var(--primary); width: 0%; border-radius: 4px; transition: 0.4s; }
+
+.music-btn {
+    position: fixed; bottom: 20px; left: 20px; width: 50px; height: 50px;
+    background: white; border-radius: 50%; display: flex; align-items: center;
+    justify-content: center; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    font-size: 20px; z-index: 100;
+}
+
+.error-text { color: var(--danger); margin-top: 10px; font-size: 14px; }
