@@ -2,113 +2,58 @@
 <html lang="kk">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>QazTest | Бағдарламалау тесті</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Test Portal</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div id="app">
-        <!-- Пароль енгізу беті -->
-        <div id="loginScreen" class="screen active">
-            <div class="login-card">
-                <h1>🔐 QazTest</h1>
-                <p>Тест жүйесіне кіру</p>
-                <input type="password" id="passwordInput" placeholder="Пароль енгізіңіз" maxlength="4">
-                <button id="loginBtn" class="btn-primary">Кіру</button>
-                <div id="loginError" class="error-message"></div>
-                <div class="footer-note">Жасаған — Ayan KZ</div>
-            </div>
-        </div>
+<body oncontextmenu="return false" onselectstart="return false" ondragstart="return false">
 
-        <!-- Басты бет -->
-        <div id="homeScreen" class="screen">
-            <div class="card">
-                <h1>🧠 QazTest <span class="blue-accent" id="totalQuestionsHome">84</span></h1>
-                <div class="subhead">Бағдарламалау тесті — 84 сұрақ</div>
-                
-                <div class="feature-box">
-                    <p>📌 <strong>Тест сипаттамасы:</strong></p>
-                    <ul>
-                        <li>✔️ Сұрақтар саны: <span id="totalQCount">84</span></li>
-                        <li>✔️ Әр сұрақта 5 жауап нұсқасы</li>
-                        <li>✔️ Жауап таңдаған соң нәтиже көрсетіледі</li>
-                        <li>✔️ Келесі сұрақ автоматты түрде жүктеледі</li>
-                        <li>✔️ Таймер: 30 минут</li>
-                    </ul>
-                </div>
-
-                <div class="mode-selector">
-                    <button id="darkModeBtn" class="mode-btn">🌙 Қараңғы режим</button>
-                    <button id="eyeComfortBtn" class="mode-btn">👁️ Жайлы режим</button>
-                    <button id="fontSizeBtn" class="mode-btn">🔤 Үлкен шрифт</button>
-                </div>
-
-                <button class="btn btn-primary" id="startTestBtn">▶ Тестті бастау</button>
-                <div class="footer-note">Жасаған — Ayan KZ</div>
-            </div>
-        </div>
-
-        <!-- Тест беті -->
-        <div id="testScreen" class="screen">
-            <div class="card">
-                <div class="stats-bar">
-                    <div class="progress-container">
-                        <div class="progress-label"><span id="currentQNo">1</span>/<span id="totalQ">84</span></div>
-                        <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
-                    </div>
-                    <div class="timer-box" id="timerDisplay">⏳ 30:00</div>
-                </div>
-
-                <div id="questionContainer">
-                    <div class="question-text" id="questionText">Сұрақ жүктелуде...</div>
-                    <div class="options-grid" id="optionsContainer"></div>
-                </div>
-
-                <div class="test-footer">
-                    <span class="badge" id="answeredCounter">0/84</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- Нәтиже беті -->
-        <div id="resultScreen" class="screen">
-            <div class="card">
-                <h1>📊 Нәтиже</h1>
-                <div class="result-summary">
-                    <div class="score-number" id="finalScore">0</div>
-                    <div style="font-size: 1.6rem; font-weight: 300;" id="finalScoreText">/ 84 балл</div>
-                    <div class="result-details">
-                        <div class="result-item">
-                            <span class="result-label">Дұрыс:</span>
-                            <span class="result-value correct-value" id="correctCount">0</span>
-                        </div>
-                        <div class="result-item">
-                            <span class="result-label">Қате:</span>
-                            <span class="result-value incorrect-value" id="wrongCount">0</span>
-                        </div>
-                        <div class="result-item">
-                            <span class="result-label">Пайыз:</span>
-                            <span class="result-value" id="percentageResult">0%</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="nav-row">
-                    <button class="btn btn-outline" id="retryBtn">🔄 Қайта тапсыру</button>
-                    <button class="btn btn-primary" id="homeBtn">🏠 Басты бет</button>
-                </div>
-                <div class="footer-note">Жасаған — Ayan KZ</div>
-            </div>
+    <div id="login-screen" class="screen">
+        <div class="card shadow">
+            <h2>Кіру</h2>
+            <input type="password" id="password-input" placeholder="Пароль">
+            <button onclick="checkPassword()">Кіру</button>
+            <p id="login-error" class="error-text"></p>
         </div>
     </div>
 
-    <!-- Үзіліс ескерту модалы -->
-    <div id="breakReminder" class="reminder-modal">
-        <div class="reminder-content">
-            <h3>👁️ Көзді демалдыру</h3>
-            <p>Көзіңізді демалдыру үшін 1–2 минут үзіліс жасаңыз</p>
-            <button id="reminderOkBtn">Түсіндім</button>
+    <div id="home-screen" class="screen hidden">
+        <div class="card shadow animate-fade">
+            <h1>Қош келдіңіз!</h1>
+            <p>Тест тапсырмаларына дайынсыз ба?</p>
+            <div class="controls">
+                <button onclick="setTheme('dark')">Dark Mode</button>
+                <button onclick="setTheme('eye')">Eye Comfort</button>
+                <button onclick="setTheme('large')">Large Text</button>
+            </div>
+            <button class="primary-btn" onclick="startQuiz()">Тестті бастау</button>
+            <footer class="footer">Жасаған — Ayan KZ</footer>
         </div>
     </div>
+
+    <div id="quiz-screen" class="screen hidden">
+        <div class="top-nav">
+            <span id="q-counter">1 / 85</span>
+            <div id="timer-box">30:00</div>
+        </div>
+        <div class="progress-container">
+            <div id="progress-bar"></div>
+        </div>
+        <div class="card quiz-card">
+            <h3 id="question-label"></h3>
+            <div id="options-list" class="options-grid"></div>
+        </div>
+    </div>
+
+    <div id="result-screen" class="screen hidden">
+        <div class="card shadow">
+            <h2>Нәтиже</h2>
+            <div id="stats-output"></div>
+            <button class="primary-btn" onclick="location.reload()">Қайта тапсыру</button>
+        </div>
+    </div>
+
+    <div id="alert-box" class="alert-msg hidden"></div>
 
     <script src="script.js"></script>
 </body>
