@@ -209,6 +209,26 @@
             flex-shrink: 0;
         }
 
+        .option-item.correct {
+            background: #e1f7e1;
+            border-color: #2ecc71;
+        }
+
+        .option-item.correct .option-letter {
+            background: #2ecc71;
+            color: white;
+        }
+
+        .option-item.incorrect {
+            background: #ffe5e5;
+            border-color: #e74c3c;
+        }
+
+        .option-item.incorrect .option-letter {
+            background: #e74c3c;
+            color: white;
+        }
+
         .option-item.selected {
             background: #d8eaff;
             border-color: #1e6df2;
@@ -349,7 +369,7 @@
 
 <script>
 (function() {
-    // ---------- 100 ТОЛЫҚ СҰРАҚ (Барлық сұрақтар тест жинағынан) ----------
+    // ---------- 100 ТОЛЫҚ СҰРАҚ ----------
     const questions = [
         // 1-10
         {
@@ -952,8 +972,18 @@
             let htmlStr = '';
             const letters = ['A', 'B', 'C', 'D'];
             q.options.forEach((opt, idx) => {
-                const selectedClass = (userAnswers[currentIndex] === idx) ? 'selected' : '';
-                htmlStr += `<div class="option-item ${selectedClass}" data-opt-index="${idx}">
+                let additionalClass = '';
+                if (userAnswers[currentIndex] !== null) {
+                    if (idx === q.correct) {
+                        additionalClass = 'correct';
+                    } else if (idx === userAnswers[currentIndex] && idx !== q.correct) {
+                        additionalClass = 'incorrect';
+                    }
+                } else if (userAnswers[currentIndex] === idx) {
+                    additionalClass = 'selected';
+                }
+                
+                htmlStr += `<div class="option-item ${additionalClass}" data-opt-index="${idx}">
                     <span class="option-letter">${letters[idx]}</span>
                     <span>${opt}</span>
                 </div>`;
@@ -975,22 +1005,21 @@
     }
 
     function handleAnswerSelect(optIndex) {
-        if (userAnswers[currentIndex] !== null) {
-            // Бұрын таңдалған болса, өзгертуге рұқсат (қайта таңдау)
-            userAnswers[currentIndex] = optIndex;
-            // Бірақ бірден келесіге өтпей, сол бетте қалады (қалауыңызша)
-            renderQuestion(); // қайта рендер (selected жаңартылсын)
-            return;
-        }
+        if (userAnswers[currentIndex] !== null) return; // Бір рет таңдау
+        
         userAnswers[currentIndex] = optIndex;
-
-        if (currentIndex + 1 < questions.length) {
-            currentIndex++;
-            renderQuestion();
-            updateProgress();
-        } else {
-            finishTest();
-        }
+        renderQuestion(); // Жауапты көрсету (жасыл/қызыл)
+        
+        // 1 секунд кідіріспен келесі сұраққа өту
+        setTimeout(() => {
+            if (currentIndex + 1 < questions.length) {
+                currentIndex++;
+                renderQuestion();
+                updateProgress();
+            } else {
+                finishTest();
+            }
+        }, 800);
     }
 
     function finishTest() {
