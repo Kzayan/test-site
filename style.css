@@ -1,32 +1,28 @@
 body {
   font-family: Arial, sans-serif;
-  margin: 0;
-  background: #f5f9ff;
+  background: #f0f8ff;
   color: #333;
   text-align: center;
-}
-
-h1, h2 {
-  color: #004080;
+  margin: 0;
+  padding: 0;
 }
 
 .page {
-  display: none;
   padding: 20px;
 }
 
-.page.active {
-  display: block;
+.hidden {
+  display: none;
 }
 
 button {
   background: #007BFF;
   color: white;
   border: none;
-  padding: 12px 20px;
-  margin: 10px;
-  border-radius: 6px;
+  padding: 10px 20px;
+  margin-top: 10px;
   cursor: pointer;
+  border-radius: 5px;
   transition: 0.3s;
 }
 
@@ -34,36 +30,39 @@ button:hover {
   background: #0056b3;
 }
 
-.progress-container {
-  width: 80%;
-  background: #ddd;
-  margin: 10px auto;
+#progress-bar {
+  height: 20px;
+  background: lightgray;
+  margin: 10px 0;
   border-radius: 10px;
   overflow: hidden;
 }
 
-#progressBar {
-  height: 20px;
-  width: 0%;
+#progress-bar div {
+  height: 100%;
   background: #007BFF;
-  transition: width 0.3s;
+  width: 0%;
+  transition: width 0.5s;
 }
 
-#timer {
-  font-size: 18px;
-  margin: 10px;
-  color: #d9534f;
+.correct {
+  background: green;
+  color: white;
+  animation: glow 1s;
 }
 
-#options button {
-  display: block;
-  width: 60%;
-  margin: 8px auto;
+.wrong {
+  background: red;
+  color: white;
+}
+
+@keyframes glow {
+  from { box-shadow: 0 0 5px green; }
+  to { box-shadow: 0 0 20px lime; }
 }
 
 footer {
   margin-top: 30px;
-  padding: 15px;
-  background: #004080;
-  color: white;
+  font-size: 14px;
+  color: gray;
 }
