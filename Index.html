@@ -7,280 +7,39 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet"/>
-<style>
-/* ── Variables ── */
-:root{
-  --bg:#eef2ff;--surface:#fff;--surface2:#f5f7ff;--border:#dde3f8;
-  --text:#1a1f3c;--text2:#5a6080;
-  --blue:#3b5bdb;--blue-h:#2f4ac8;--blue-lt:#dde3f8;--blue-gl:rgba(59,91,219,.18);
-  --green:#2f9e44;--green-lt:#d3f9d8;--green-gl:rgba(47,158,68,.22);
-  --red:#e03131;--red-lt:#ffe3e3;--red-gl:rgba(224,49,49,.22);
-  --yellow-bg:#fff9db;--yellow-brd:#ffd43b;--yellow-txt:#5c4a00;
-  --r:14px;--rl:22px;
-  --sh:0 4px 20px rgba(59,91,219,.10);
-  --sh-lg:0 12px 40px rgba(59,91,219,.16);
-  --fz:16px;
-}
-body.dark{
-  --bg:#0d1117;--surface:#161b27;--surface2:#1c2438;--border:#2a3250;
-  --text:#e8ecf8;--text2:#8b96c0;--blue-lt:#1a2a5e;
-  --sh:0 4px 20px rgba(0,0,0,.45);--sh-lg:0 12px 40px rgba(0,0,0,.55);
-}
-body.warm{
-  --bg:#fdf6ed;--surface:#fffaf3;--surface2:#fef3e2;--border:#e8d5b7;
-  --text:#3d2b1f;--text2:#7a5c47;
-  --blue:#c05621;--blue-h:#a84a1a;--blue-lt:#feebc8;--blue-gl:rgba(192,86,33,.16);
-}
-body.large{--fz:20px;}
-
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{
-  font-family:'Nunito',sans-serif;font-size:var(--fz);
-  background:var(--bg);color:var(--text);min-height:100vh;
-  transition:background .25s,color .25s;overflow-x:hidden;
-}
-
-/* Pages */
-.page{display:none;min-height:100vh;flex-direction:column;animation:pgIn .35s ease both}
-.page.active{display:flex}
-@keyframes pgIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
-.hidden{display:none!important}
-
-/* ── LOGIN ── */
-#page-login{align-items:center;justify-content:center;position:relative;overflow:hidden}
-.blob{position:absolute;border-radius:50%;filter:blur(80px);opacity:.4;animation:blobF 9s ease-in-out infinite}
-.b1{width:500px;height:500px;background:var(--blue-gl);top:-160px;left:-160px;animation-delay:0s}
-.b2{width:380px;height:380px;background:var(--blue-gl);bottom:-100px;right:-100px;animation-delay:3s}
-.b3{width:260px;height:260px;background:var(--blue-gl);top:45%;left:55%;animation-delay:6s}
-@keyframes blobF{0%,100%{transform:scale(1) translate(0,0)}50%{transform:scale(1.12) translate(10px,-10px)}}
-
-.login-box{
-  position:relative;z-index:2;background:var(--surface);
-  border:1.5px solid var(--border);border-radius:var(--rl);
-  padding:3rem 2.5rem;width:min(420px,92vw);text-align:center;
-  box-shadow:var(--sh-lg);animation:cardIn .5s cubic-bezier(.22,.61,.36,1) both;
-}
-@keyframes cardIn{from{opacity:0;transform:translateY(36px) scale(.96)}to{opacity:1;transform:none}}
-
-.login-icon{width:80px;height:80px;margin:0 auto 1.4rem;position:relative;display:flex;align-items:center;justify-content:center}
-.ring{position:absolute;inset:0;border-radius:50%;border:2.5px solid var(--blue);border-top-color:transparent;animation:spin 2.5s linear infinite}
-@keyframes spin{to{transform:rotate(360deg)}}
-.lock{font-size:2.2rem}
-.login-h{font-size:1.9rem;font-weight:900;margin-bottom:.4rem}
-.login-sub{color:var(--text2);font-size:.93rem;margin-bottom:1.8rem}
-
-.pw-wrap{
-  display:flex;border:2px solid var(--border);border-radius:var(--r);overflow:hidden;
-  transition:border-color .2s,box-shadow .2s;
-}
-.pw-wrap:focus-within{border-color:var(--blue);box-shadow:0 0 0 4px var(--blue-gl)}
-.pw-wrap.shake{animation:shake .38s ease}
-@keyframes shake{0%,100%{transform:translateX(0)}20%,60%{transform:translateX(-7px)}40%,80%{transform:translateX(7px)}}
-.pw-wrap input{
-  flex:1;border:none;outline:none;padding:.9rem 1rem;
-  font-size:1.4rem;letter-spacing:.35rem;font-family:'JetBrains Mono',monospace;
-  background:transparent;color:var(--text);
-}
-.pw-wrap button{
-  border:none;cursor:pointer;padding:.9rem 1.4rem;background:var(--blue);color:#fff;
-  font-size:1rem;font-weight:800;font-family:'Nunito',sans-serif;white-space:nowrap;
-  transition:background .2s;
-}
-.pw-wrap button:hover{background:var(--blue-h)}
-.pw-wrap button:active{transform:scale(.97)}
-.pw-err{margin-top:.9rem;background:var(--red-lt);color:var(--red);border-radius:10px;padding:.5rem 1rem;font-size:.9rem;font-weight:800}
-
-/* ── TOPBAR ── */
-.topbar,.test-hdr{
-  background:var(--surface);border-bottom:1px solid var(--border);
-  padding:.9rem 1.5rem;position:sticky;top:0;z-index:100;
-  box-shadow:0 2px 12px rgba(0,0,0,.06);
-}
-.topbar{display:flex;align-items:center;justify-content:space-between}
-.logo{font-size:1.1rem;font-weight:900;color:var(--blue)}
-.logo.sm{font-size:1rem}
-.tools{display:flex;gap:.4rem}
-.tb{
-  background:var(--surface2);border:1.5px solid var(--border);border-radius:10px;
-  padding:.38rem .7rem;font-size:.85rem;cursor:pointer;color:var(--text);
-  font-family:'Nunito',sans-serif;transition:background .2s,border-color .2s;
-}
-.tb:hover{background:var(--blue-lt);border-color:var(--blue)}
-.tb.on{background:var(--blue);color:#fff;border-color:var(--blue)}
-
-/* ── HOME ── */
-.hero{max-width:680px;margin:0 auto;padding:4rem 1.5rem 2.5rem;text-align:center;flex:1}
-.badge{
-  display:inline-block;background:var(--blue-lt);color:var(--blue);
-  border-radius:30px;padding:.28rem 1rem;font-size:.78rem;font-weight:800;
-  letter-spacing:.06em;text-transform:uppercase;margin-bottom:1.2rem;
-}
-.hero-title{font-size:clamp(2rem,5vw,3.2rem);font-weight:900;line-height:1.2;margin-bottom:1rem}
-.hero-title em{font-style:normal;color:var(--blue)}
-.hero-desc{color:var(--text2);line-height:1.7;margin-bottom:1.6rem}
-.pills{display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center;margin-bottom:2rem}
-.pill{background:var(--surface);border:1.5px solid var(--border);border-radius:30px;padding:.35rem 1rem;font-size:.86rem;font-weight:700;color:var(--text2)}
-.feats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;max-width:780px;margin:0 auto;padding:0 1.5rem 3rem}
-.feat{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--r);padding:1.4rem 1.1rem;transition:transform .2s,box-shadow .2s}
-.feat:hover{transform:translateY(-4px);box-shadow:var(--sh)}
-.feat-ico{font-size:1.7rem;display:block;margin-bottom:.6rem}
-.feat strong{font-size:.92rem;font-weight:800;display:block;margin-bottom:.3rem}
-.feat p{font-size:.8rem;color:var(--text2);line-height:1.5}
-
-/* ── BUTTONS ── */
-.btn-main{
-  display:inline-block;background:var(--blue);color:#fff;border:none;border-radius:var(--r);
-  padding:1rem 2.8rem;font-size:1.1rem;font-weight:800;font-family:'Nunito',sans-serif;
-  cursor:pointer;letter-spacing:.02em;box-shadow:0 6px 20px var(--blue-gl);
-  transition:background .2s,transform .15s,box-shadow .2s;
-}
-.btn-main:hover{background:var(--blue-h);transform:translateY(-2px);box-shadow:0 10px 28px var(--blue-gl)}
-.btn-main:active{transform:scale(.97)}
-.btn-sec{
-  display:block;width:100%;margin-top:.8rem;background:var(--surface2);
-  border:1.5px solid var(--border);border-radius:var(--r);padding:.85rem;
-  font-size:1rem;font-weight:700;font-family:'Nunito',sans-serif;cursor:pointer;color:var(--text);
-  transition:background .2s;
-}
-.btn-sec:hover{background:var(--blue-lt)}
-
-/* ── TEST HEADER ── */
-.test-hdr{padding:.8rem 1.5rem}
-.th1{display:flex;align-items:center;justify-content:space-between;margin-bottom:.7rem}
-.th2{display:flex;align-items:center;justify-content:space-between;margin-bottom:.6rem}
-.q-num{font-weight:800;font-size:.97rem}
-.timer{
-  font-family:'JetBrains Mono',monospace;font-size:.97rem;font-weight:700;
-  color:var(--blue);background:var(--blue-lt);padding:.28rem .8rem;border-radius:20px;
-  transition:color .2s,background .2s;
-}
-.timer.danger{color:var(--red);background:var(--red-lt);animation:blink 1s ease infinite}
-@keyframes blink{50%{opacity:.55}}
-.score-live{font-weight:800;font-size:.88rem;color:var(--green);background:var(--green-lt);padding:.28rem .8rem;border-radius:20px}
-.prog-track{height:7px;background:var(--border);border-radius:99px;overflow:hidden}
-.prog-bar{height:100%;background:linear-gradient(90deg,var(--blue),#748ffc);border-radius:99px;transition:width .55s cubic-bezier(.22,.61,.36,1)}
-
-/* ── QUESTION ── */
-.q-main{flex:1;max-width:720px;width:100%;margin:0 auto;padding:2rem 1.5rem}
-.q-card{
-  background:var(--surface);border:1.5px solid var(--border);
-  border-radius:var(--rl);padding:2rem;box-shadow:var(--sh);
-  animation:pgIn .32s ease both;
-}
-.q-lbl{font-size:.75rem;font-weight:900;letter-spacing:.09em;text-transform:uppercase;color:var(--blue);margin-bottom:.7rem}
-.q-text{font-size:clamp(.97rem,2.5vw,1.2rem);font-weight:700;line-height:1.55;margin-bottom:1.5rem}
-.q-opts{display:flex;flex-direction:column;gap:.7rem}
-.opt{
-  display:flex;align-items:center;gap:.85rem;
-  background:var(--surface2);border:2px solid var(--border);border-radius:var(--r);
-  padding:.85rem 1.15rem;cursor:pointer;text-align:left;width:100%;
-  font-size:.96rem;font-weight:600;font-family:'Nunito',sans-serif;color:var(--text);
-  transition:border-color .2s,background .2s,transform .15s,box-shadow .2s;
-  user-select:none;
-}
-.opt:hover:not(.locked){
-  border-color:var(--blue);background:var(--blue-lt);
-  transform:translateX(5px);box-shadow:0 2px 12px var(--blue-gl);
-}
-.opt-L{
-  min-width:32px;width:32px;height:32px;border-radius:8px;
-  background:var(--border);color:var(--text2);
-  display:flex;align-items:center;justify-content:center;
-  font-size:.78rem;font-weight:900;font-family:'JetBrains Mono',monospace;
-  flex-shrink:0;transition:background .2s,color .2s;
-}
-.opt.correct{border-color:var(--green)!important;background:var(--green-lt)!important;animation:gG .45s ease}
-.opt.correct .opt-L{background:var(--green);color:#fff}
-.opt.wrong{border-color:var(--red)!important;background:var(--red-lt)!important;animation:gR .45s ease}
-.opt.wrong .opt-L{background:var(--red);color:#fff}
-.opt.locked{cursor:default;pointer-events:none}
-@keyframes gG{0%{box-shadow:0 0 0 0 var(--green-gl)}50%{box-shadow:0 0 0 12px var(--green-gl)}100%{box-shadow:0 0 0 0 var(--green-gl)}}
-@keyframes gR{0%{box-shadow:0 0 0 0 var(--red-gl)}50%{box-shadow:0 0 0 12px var(--red-gl)}100%{box-shadow:0 0 0 0 var(--red-gl)}}
-
-/* Eye rest */
-.eye-banner{
-  position:fixed;bottom:1.4rem;left:50%;transform:translateX(-50%);
-  background:var(--yellow-bg);border:1.5px solid var(--yellow-brd);color:var(--yellow-txt);
-  border-radius:var(--r);padding:.75rem 1.4rem;font-weight:800;font-size:.88rem;
-  display:flex;align-items:center;gap:1rem;box-shadow:0 8px 24px rgba(0,0,0,.15);
-  z-index:999;max-width:calc(100vw - 2rem);animation:pgIn .3s ease;
-}
-.eye-banner button{background:none;border:none;cursor:pointer;font-size:1rem;color:var(--yellow-txt);flex-shrink:0}
-
-/* ── RESULT ── */
-.res-center{flex:1;display:flex;align-items:center;justify-content:center;padding:2rem 1.5rem}
-.res-card{
-  background:var(--surface);border:1.5px solid var(--border);border-radius:var(--rl);
-  padding:3rem 2.5rem;width:min(480px,100%);text-align:center;box-shadow:var(--sh-lg);
-  animation:cardIn .5s cubic-bezier(.22,.61,.36,1) both;
-}
-.res-emoji{font-size:4rem;margin-bottom:.4rem;animation:pop .5s ease .3s both}
-@keyframes pop{0%{transform:scale(0)}70%{transform:scale(1.2)}100%{transform:scale(1)}}
-.res-title{font-size:1.5rem;font-weight:900;margin-bottom:.5rem}
-.res-big{font-size:3.2rem;font-weight:900;font-family:'JetBrains Mono',monospace;color:var(--blue);margin-bottom:.3rem}
-.res-pct{font-size:1.3rem;font-weight:800;color:var(--text2);margin-bottom:2rem}
-.res-stats{display:flex;gap:.9rem;justify-content:center;margin-bottom:1.4rem}
-.rs{flex:1;border-radius:var(--r);padding:1rem .5rem;border:2px solid transparent}
-.rs-g{background:var(--green-lt);border-color:#74c476}
-.rs-r{background:var(--red-lt);border-color:#fc8181}
-.rs-b{background:var(--blue-lt);border-color:#7c9cee}
-.rs-n{display:block;font-size:2rem;font-weight:900;font-family:'JetBrains Mono',monospace}
-.rs-g .rs-n{color:var(--green)}.rs-r .rs-n{color:var(--red)}.rs-b .rs-n{color:var(--blue)}
-.rs-l{font-size:.76rem;font-weight:700;color:var(--text2)}
-.res-prog-track{height:10px;background:var(--border);border-radius:99px;overflow:hidden;margin-bottom:1.6rem}
-.res-prog-fill{height:100%;width:0;background:linear-gradient(90deg,var(--green),#51cf66);border-radius:99px;transition:width 1.3s cubic-bezier(.22,.61,.36,1)}
-
-/* Toast */
-.toast{
-  position:fixed;top:1.1rem;left:50%;transform:translateX(-50%);
-  background:#1a1f3c;color:#fff;border-radius:12px;padding:.65rem 1.5rem;
-  font-size:.88rem;font-weight:700;z-index:9999;box-shadow:0 8px 28px rgba(0,0,0,.28);
-  white-space:nowrap;animation:pgIn .28s ease both;
-}
-/* Footer */
-.footer{text-align:center;padding:1.4rem;font-size:.8rem;color:var(--text2);border-top:1px solid var(--border)}
-
-/* Responsive */
-@media(max-width:520px){
-  .login-box{padding:2rem 1.5rem}
-  .hero{padding:2.5rem 1rem 2rem}
-  .feats{grid-template-columns:1fr 1fr;padding:0 1rem 2.5rem}
-  .q-card{padding:1.4rem 1.1rem}
-  .res-card{padding:2rem 1.2rem}
-  .res-big{font-size:2.4rem}
-  .topbar,.test-hdr{padding:.7rem 1rem}
-  .q-main{padding:1.4rem 1rem}
-}
-</style>
+<link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
-<!-- ░ БЕТ 1 — ПАРОЛЬ ░ -->
 <div id="page-login" class="page active">
-  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="blob b3"></div>
   <div class="login-box">
-    <div class="login-icon"><div class="ring"></div><span class="lock">🔐</span></div>
+    <div class="login-icon">
+      <div class="ring"></div>
+      <span class="lock">🔐</span>
+    </div>
     <h1 class="login-h">Тестке кіру</h1>
     <p class="login-sub">Паролді енгізіп, жалғастырыңыз</p>
     <div class="pw-wrap" id="pw-wrap">
-      <input id="pw-in" type="password" placeholder="• • • •" maxlength="10" autocomplete="off"
+      <input id="pw-in" type="password" placeholder="• • • •" maxlength="10"
+        autocomplete="off"
         oninput="document.getElementById('pw-err').classList.add('hidden')"
-        onkeydown="if(event.key==='Enter')checkPw()"/>
-      <button onclick="checkPw()">Кіру&nbsp;→</button>
+        onkeydown="if(event.key==='Enter') checkPw()"/>
+      <button onclick="checkPw()">Кіру →</button>
     </div>
     <p id="pw-err" class="pw-err hidden">⚠️ Пароль қате, қайта енгізіңіз</p>
   </div>
 </div>
 
-<!-- ░ БЕТ 2 — БАСТЫ БЕТ ░ -->
 <div id="page-home" class="page">
   <header class="topbar">
     <span class="logo">🧠 AyanTest</span>
     <div class="tools">
-      <button class="tb" id="btn-dark" onclick="toggleDark()" title="Қараңғы режим">🌙</button>
-      <button class="tb" id="btn-warm" onclick="toggleWarm()" title="Жылы режим">☀️</button>
-      <button class="tb" id="btn-font" onclick="toggleFont()" title="Үлкен шрифт">Аа</button>
+      <button class="tb" id="btn-dark" onclick="toggleDark()">🌙</button>
+      <button class="tb" id="btn-warm" onclick="toggleWarm()">☀️</button>
+      <button class="tb" id="btn-font" onclick="toggleFont()">Аа</button>
     </div>
   </header>
   <section class="hero">
@@ -304,7 +63,6 @@ body{
   <footer class="footer">Жасаған — <strong>Ayan KZ</strong></footer>
 </div>
 
-<!-- ░ БЕТ 3 — ТЕСТ ░ -->
 <div id="page-test" class="page">
   <header class="test-hdr">
     <div class="th1">
@@ -320,7 +78,9 @@ body{
       <div id="timer" class="timer">⏱ 30:00</div>
       <span id="score-live" class="score-live">✅ 0</span>
     </div>
-    <div class="prog-track"><div id="prog-bar" class="prog-bar" style="width:0%"></div></div>
+    <div class="prog-track">
+      <div id="prog-bar" class="prog-bar" style="width:0%"></div>
+    </div>
   </header>
   <main class="q-main">
     <div id="q-card" class="q-card">
@@ -336,7 +96,6 @@ body{
   <footer class="footer">Жасаған — <strong>Ayan KZ</strong></footer>
 </div>
 
-<!-- ░ БЕТ 4 — НӘТИЖЕ ░ -->
 <div id="page-result" class="page">
   <div class="res-center">
     <div class="res-card">
@@ -349,7 +108,9 @@ body{
         <div class="rs rs-r"><span id="rs-w" class="rs-n">0</span><span class="rs-l">Қате</span></div>
         <div class="rs rs-b"><span id="rs-t" class="rs-n">0</span><span class="rs-l">Барлығы</span></div>
       </div>
-      <div class="res-prog-track"><div id="res-prog" class="res-prog-fill"></div></div>
+      <div class="res-prog-track">
+        <div id="res-prog" class="res-prog-fill"></div>
+      </div>
       <button class="btn-main" style="width:100%" onclick="retakeTest()">🔄 Қайта тапсыру</button>
       <button class="btn-sec" onclick="goHome()">🏠 Басты бет</button>
     </div>
@@ -357,273 +118,7 @@ body{
   <footer class="footer">Жасаған — <strong>Ayan KZ</strong></footer>
 </div>
 
-<!-- Toast -->
 <div id="toast" class="toast hidden"></div>
-
-<script>
-// ════════════════════════════════════════════
-// QUESTIONS — тікелей ішінде (fetch жоқ)
-// ════════════════════════════════════════════
-const QUESTIONS = [{"question":"Кодтағы қателерді анықтау процесі қалай аталады?","options":["Компиляция","Дебаггинг","Тестілеу","Орындау","Инсталляция"],"correct":1},{"question":"Синтаксистік қате дегеніміз не?","options":["Логикалық қате","Бағдарлама баяу жұмыс істеуі","Жазылу ережесінің бұзылуы","Дерекқор қатесі","Дизайн қатесі"],"correct":2},{"question":"Логикалық қате кезінде:","options":["Бағдарлама мүлде ашылмайды","Қате нәтиже береді","Компьютер өшеді","Файл жойылады","Желі үзіледі"],"correct":1},{"question":"Runtime error қашан пайда болады?","options":["Код жазу кезінде","Компиляция кезінде","Орындау кезінде","Жобалау кезінде","Орнату кезінде"],"correct":2},{"question":"Debugger не үшін керек?","options":["Код жазу","Қате іздеу","Сурет салу","Файл сақтау","Интернетке шығу"],"correct":2},{"question":"print() функциясы не үшін қолданылады?","options":["Қате жою","Мәлімет шығару","Файл ашу","Желіге қосылу","Код жою"],"correct":1},{"question":"try-except блогы не үшін керек?","options":["Цикл құру","Шарт жазу","Қателерді өңдеу","Айнымалы құру","Файл жою"],"correct":2},{"question":"IDE дегеніміз:","options":["Операциялық жүйе","Бағдарламалау ортасы","Вирус","Драйвер","Сервер"],"correct":1},{"question":"Infinite loop дегеніміз:","options":["Бір рет орындалатын цикл","Шексіз цикл","Қате код","Айнымалы","Функция"],"correct":1},{"question":"Null мәні дегеніміз:","options":["0 саны","Бос мән","1 саны","Теріс сан","Символ"],"correct":1},{"question":"Логикалық қатені табудың ең тиімді жолы:","options":["Компьютерді өшіру","Кодты қайта көшіру","Қадамдап орындау (step-by-step)","Интернетті тексеру","Принтер қосу"],"correct":2},{"question":"Синтаксистік қате табылғанда:","options":["Бағдарлама дұрыс жұмыс істейді","Компиляция тоқтайды","Нәтиже баяу шығады","Файл ашылады","Желі үзіледі"],"correct":1},{"question":"Айнымалы анықталмаса қандай қате шығады?","options":["Type error","Name error","Index error","-Logic error","Value error"],"correct":1},{"question":"Массив шегінен тыс элементке жүгінсек:","options":["Name error","Type error","Index error","Syntax error","Key error"],"correct":2},{"question":"Type error қашан болады?","options":["Қате атау жазылса","Түрлер сәйкес келмесе","Индекс дұрыс болмаса","Цикл тоқтаса","Файл жабылса"],"correct":1},{"question":"Қатені қайталамау үшін не істеу керек?","options":["Кодты тестілеу","Өшіру","Компьютер ауыстыру","Интернет қосу","Бағдарламаны жасыру"],"correct":0},{"question":"assert командасы не үшін қолданылады?","options":["Файл ашу","Мәлімет басу","Шартты тексеру","Цикл жасау","Айнымалы жою"],"correct":2},{"question":"Лог-файл не үшін керек?","options":["Музыка сақтау","Қате жазбаларын сақтау","Видео көру","Сурет салу","Интернетке қосылу"],"correct":1},{"question":"Refactoring дегеніміз:","options":["Кодты жою","Код құрылымын жақсарту","Қате қосу","Файл форматтау","Компьютер тазалау"],"correct":1},{"question":"Unit тестілеу не тексереді?","options":["Бүкіл жүйені","Бір модульді","Серверді","Интернетті","Дизайнды"],"correct":1},{"question":"ValueError қашан пайда болады?","options":["Айнымалы жоқ болса","Мәлімет түрі сәйкес келмесе","Дұрыс емес мән енгізілсе","Файл табылмаса"],"correct":2},{"question":"FileNotFoundError қашан шығады?","options":["Айнымалы жоқ болса","Файл табылмаса","Түр сәйкес келмесе","Шарт қате болса","Цикл тоқтаса"],"correct":1},{"question":"except блогы қай кезде орындалады?","options":["Қате болмаса","Қате пайда болса","Әрқашан","Цикл ішінде ғана","Функция алдында"],"correct":1},{"question":"finally блогы:","options":["Ешқашан орындалмайды","Қате болса ғана орындалады","Әрқашан орындалады","Цикл жасайды","Айнымалы құрады"],"correct":2},{"question":"Логикалық қателерді табу үшін:","options":["Кодты талдау керек","Компьютер ауыстыру керек","Файлды жою керек","Интернетті өшіру керек","Принтер қосу керек"],"correct":1},{"question":"Breakpoint дегеніміз:","options":["Қате түрі","Бағдарламаны тоқтату нүктесі","Айнымалы","Цикл","Файл"],"correct":1},{"question":"Stack trace нені көрсетеді?","options":["Дизайнды","Қате шыққан жолды","Интернет жылдамдығын","Файл өлшемін","Процессор түрін"],"correct":1},{"question":"Тестілеудің мақсаты:","options":["Қате табу","Кодты жасыру","Компьютерді өшіру","Желі қосу","Файлды көшіру"],"correct":0},{"question":"Қай қате бағдарлама тоқтауына әкелуі мүмкін?","options":["Логикалық","Runtime error","Комментарий қатесі","Дизайн қатесі","Стиль қатесі"],"correct":1},{"question":"Debugging процесінің соңғы мақсаты:","options":["Кодты жою","Қатені түзету","Файлды жабу","Компьютерді өшіру","Интернетке қосылу"],"correct":1},{"question":"SyntaxError қай кезде шығады?","options":["Орындау кезінде","Компиляция кезінде","Интернет жоқ кезде","Файл жабылғанда","Цикл тоқтағанда"],"correct":0},{"question":"ZeroDivisionError қашан пайда болады?","options":["0-ге бөлгенде","Айнымалы жоқ болса","Түр сәйкес келмесе","Индекс артық болса","Файл ашылмаса"],"correct":0},{"question":"Кодтағы комментарий не үшін керек?","options":["Қате шығару","Түсіндіру жазу","Файл жою","Айнымалы құру","Цикл жасау"],"correct":1},{"question":"Қате табылғаннан кейін бірінші қадам:","options":["Кодты өшіру","-Себебін анықтау","Компьютерді өшіру","Жаңа файл ашу","Интернет қосу"],"correct":0},{"question":"while циклі тоқтамаса, бұл:","options":["Syntax error","Логикалық қате","Type error","Name error","Value error"],"correct":0},{"question":"Функция дұрыс нәтиже бермесе:","options":["Логикалық қате бар","Компьютер бұзылған","Интернет жоқ","Файл ашылмаған","Драйвер жоқ"],"correct":0},{"question":"IDE-де қызыл сызық нені білдіреді?","options":["Дұрыс код","Синтаксистік қате","Интернет бар","Файл сақталған","Принтер қосылған"],"correct":1},{"question":"Exception дегеніміз:","options":["Айнымалы","Қате жағдай","Цикл","Функция","Сервер"],"correct":1},{"question":"Кодты кішкене бөліктермен тексеру:","options":["Инсталляция","-Модульдік тексеру","Форматтау","Архивтеу","Дизайн"],"correct":0},{"question":"Қай әдіс қателерді азайтады?","options":["Тестілеу","Көшіру","Өшіру","Форматтамау","Компьютер ауыстыру"],"correct":0},{"question":"KeyError қашан пайда болады?","options":["Айнымалы жоқ болса","Сөздікте (dict) жоқ кілт қолданылса","0-ге бөлгенде","Түр сәйкес келмесе","Файл ашылмаса"],"correct":1},{"question":"ImportError дегеніміз:","options":["Айнымалы қатесі","Модуль жүктелмесе","Индекс қатесі","Логикалық қате","Шарт қатесі"],"correct":1},{"question":"Кодты қайта қарау (code review) мақсаты:","options":["Қате табу","Файл жою","Интернет қосу","Компьютер өшіру","Дизайн өзгерту"],"correct":0},{"question":"Traceback нені көрсетеді?","options":["Файл көлемін","Қате шыққан жолдар тізбегін","Интернет жылдамдығын","Компьютер жадын","Экран өлшемін"],"correct":1},{"question":"Бағдарламаны тест мәліметтермен тексеру:","options":["Архивтеу","Тестілеу","Орнату","Форматтау","Көшіру"],"correct":1},{"question":"Қай жағдайда try блогы орындалады?","options":["Қате болса ғана","Әрқашан бірінші орындалады","Ешқашан","Цикл ішінде ғана","Файл жабылғанда"],"correct":1},{"question":"except бірнешеу болуы мүмкін бе?","options":["Жоқ","Иә","Тек біреу","Тек циклде","Тек функцияда"],"correct":1},{"question":"Debugging құралдарының бірі:","options":["Paint","Debugger","Word","Excel","Browser"],"correct":1},{"question":"Кодтағы артық жолдарды жою:","options":["Refactoring","Компиляция","Инсталляция","Архивтеу","Көшіру"],"correct":0},{"question":"Қате табылған соң не істеу керек?","options":["Елемеу","Түзету","Жою","Компьютер өшіру","Файл жабу"],"correct":1},{"question":"AttributeError қашан шығады?","options":["0-ге бөлгенде","Объектіде жоқ қасиет шақырылса","Индекс артық болса","Файл табылмаса","Айнымалы жоқ болса"],"correct":1},{"question":"Memory error себебі:","options":["Жад жетіспеуі","Интернет жоқ","Синтаксис қате","Индекс үлкен","Файл жабық"],"correct":0},{"question":"Қай әдіс қатені тез табуға көмектеседі?","options":["Кодты форматтау","Қадамдап орындау","Файл көшіру","Өшіру","Архивтеу"],"correct":1},{"question":"Тест кейс дегеніміз:","options":["Қате түрі","Тексеру сценарийі","Айнымалы","Файл","Сервер"],"correct":1},{"question":"Boundary value testing не тексереді?","options":["Орта мәндерді","Шектік мәндерді","Тек мәтінді","Дизайнды","Интернетті"],"correct":1},{"question":"Infinite recursion себебі:","options":["Шарт жоқ","Файл жоқ","Интернет жоқ","Индекс артық","Түр сәйкес емес"],"correct":0},{"question":"raise командасы:","options":["Қате тастау","Цикл құру","Айнымалы жою","Файл ашу","Мәлімет шығару"],"correct":0},{"question":"Қате туралы хабарлама не үшін маңызды?","options":["Уақыт өткізу","Себебін түсіну","Дизайн көру","Файл өлшеу","Интернет тексеру"],"correct":1},{"question":"Regression testing мақсаты:","options":["Жаңа қате қосу","Бұрынғы қателер қайталанбауын тексеру","Файл жою","Компьютер жаңарту","Дизайн өзгерту"],"correct":1},{"question":"Кодты жиі сақтау не үшін керек?","options":["Қате көбейту","Мәлімет жоғалтпау","Интернет қосу","Форматтау","Архивтеу"],"correct":1},{"question":"Логикалық қате табудың бір жолы:","options":["Нәтижені күтілген мәнмен салыстыру","Компьютер өшіру","Файл жою","Интернет қосу","Архивтеу"],"correct":0},{"question":"Exception handling мақсаты:","options":["Бағдарламаны тоқтату","Қатені басқару","Файл ашу","Айнымалы жою","Дизайн жасау"],"correct":0},{"question":"Кодтың оқылуын жақсарту:","options":["Түсінікті атаулар қолдану","Барлығын бір жолға жазу","Комментарийсіз жазу","Форматтамау","Қысқарту"],"correct":0},{"question":"Unit test қашан жазылады?","options":["Кодтан кейін","Кодпен бірге"],"correct":1},{"question":"Bug дегеніміз:","options":["Дұрыс код","Қате","Сервер","Айнымалы","Файл"],"correct":1},{"question":"Debugging мақсаты:","options":["Қате қосу","Қате табу және түзету","Файл жою","Интернет өшіру","Компьютер ауыстыру"],"correct":0},{"question":"try блогында не жазылады?","options":["Қауіпті код","Комментарий","Айнымалы аты","Файл аты","Дизайн"],"correct":4},{"question":"finally көбіне не үшін қолданылады?","options":["Файл жабу","Қате шығару","Цикл құру","Айнымалы жою","Дизайн жасау"],"correct":0},{"question":"Кодты тексерудің автоматты түрі:","options":["Manual testing","Automated testing","Архивтеу","Форматтау","Көшіру"],"correct":0},{"question":"Stack overflow себебі:","options":["Терең рекурсия","Интернет жоқ","Файл жоқ","Индекс үлкен","Түр сәйкес емес"],"correct":0},{"question":"Input тексеру не үшін қажет?","options":["Қате болдырмау","Интернет қосу","Файл жою","Дизайн өзгерту","Архивтеу"],"correct":0},{"question":"Қате шыққан жолды табу үшін:","options":["Traceback қарау","Компьютер өшіру","Файл жабу","Интернет тексеру","Архивтеу"],"correct":1},{"question":"Version control не үшін керек?","options":["Код нұсқаларын сақтау","Файл жою","Интернет қосу","Дизайн өзгерту","Компьютер өшіру"],"correct":0},{"question":"Git дегеніміз:","options":["Операциялық жүйе","Нұсқа бақылау жүйесі","Сервер","Айнымалы","Кате түрі"],"correct":1},{"question":"Merge conflict қашан болады?","options":["Бір файлды екі адам өзгерткенде","Интернет жоқ кезде","Файл жойылғанда","Компьютер өшкенде","Индекс үлкенде"],"correct":0},{"question":"Test coverage нені көрсетеді?","options":["Код көлемін","Тестпен қамтылған пайызды","Интернет жылдамдығын","Файл өлшемін","Дизайн сапасын"],"correct":1},{"question":"Кодты форматтау құралы:","options":["Linter","Printer","Scanner","Monitor","Router"],"correct":0},{"question":"Static analysis қашан жасалады?","options":["Орындаусыз","Орындау кезінде","Интернетпен","Серверде","Принтерде"],"correct":0},{"question":"Dynamic testing қашан жасалады?","options":["Орындау кезінде","Код жазғанда","Форматтағанда","Архивтегенде","Дизайнда"],"correct":0},{"question":"Code smell дегеніміз:","options":["Жақсы код","Жаман құрылым белгісі","Қате хабарлама","Айнымалы","Файл"],"correct":0},{"question":"Refactoring кезінде:","options":["Функционал өзгермейді","Жаңа қате қосылады","Код жойылады","Интернет қосылады","Компьютер өшеді"],"correct":0},{"question":"Қай тест жүйені толық тексереді?","options":["Unit test","Integration test","System test","Static test","Manual test"],"correct":2},{"question":"Integration test не тексереді?","options":["Бір функцияны","Модульдердің байланысын","Дизайнды","Интернетті","Файлды"],"correct":1},{"question":"Manual testing дегеніміз:","options":["Қолмен тексеру","Автоматты тексеру","Архивтеу","Форматтау","Орнату"],"correct":0},{"question":"Automated testing артықшылығы:","options":["Жылдамдық","Қате көбейту","Файл жою","Интернет өшіру","Дизайн бұзу"],"correct":0},{"question":"Қате қайталанса:","options":["Себебін терең талдау керек","Елемеу керек","Файл жою керек","Компьютер ауыстыру керек","Интернет қосу керек"],"correct":0},{"question":"Clean code мақсаты:","options":["Оқылуы жеңіл код","Ұзын код","Қате код","Форматсыз код","Архивтелген код"],"correct":0},{"question":"DRY принципі:","options":["Қайталауды азайту","Қате қосу","Файл жою","Интернет қосу","Дизайн өзгерту"],"correct":0},{"question":"SOLID принциптері:","options":["Дизайн қағидалары","Қате түрлері","Файл атауы","Интернет түрі","Айнымалы атауы"],"correct":0},{"question":"Код сапасын арттыру үшін:","options":["Тестілеу жүргізу","Комментарийсіз жазу","Барлығын қысқарту","Форматтамау","Тексермеу"],"correct":0},{"question":"Exception түрін нақты көрсету:","options":["Жақсы тәжірибе","Қате","Міндет емес","Интернетке байланысты","Файлға байланысты"],"correct":0},{"question":"Логикалық қате көбіне:","options":["Есептеуде болады","Интернетте болады","Файлда болады","Серверде болады","Принтерде болады"],"correct":0},{"question":"Кодты қайта пайдалану:","options":["Қайта қолдану","-Жою","Архивтеу","Форматтау","Өшіру"],"correct":3},{"question":"CI/CD мақсаты:","options":["Автоматты құрастыру және тексеру","Файл жою","Интернет өшіру","Дизайн өзгерту","Компьютер өшіру"],"correct":0},{"question":"Bug report құрамына кіреді:","options":["Қате сипаттамасы","Музыка","Видео","Сурет салу","Архив"],"correct":0},{"question":"Қате табылған орта:","options":["Production","Test","Dev","Барлығы мүмкін","Ешқайсысы"],"correct":3},{"question":"Code review кім жасайды?","options":["Басқа бағдарламашы","Клиент","Дизайнер","Қолданушы","Принтер"],"correct":3},{"question":"Тестілеу кезеңі:","options":["Жобалау алдында","Әзірлеу кезінде және кейін","Орнатудан кейін ғана","Архивтегенде","Форматтағанда"],"correct":1},{"question":"Қатені түзеткен соң:","options":["Қайта тестілеу керек","Елемеу керек","Файл жою керек","Интернет өшіру керек","Компьютер ауыстыру керек"],"correct":0},{"question":"Бағдарламалық код сапасының негізгі көрсеткіші:","options":["Қатесіз жұмыс","Ұзындығы","Түсі","Форматы","Архив көлемі"],"correct":0}];
-
-// ════════════════════════════════════════════
-// STATE
-// ════════════════════════════════════════════
-let shuffled=[], curIdx=0, score=0;
-let timerID=null, timeLeft=1800;
-let eyeTimer=null;
-let isDark=false, isWarm=false, isLarge=false;
-let toastT=null;
-
-// ════════════════════════════════════════════
-// INIT
-// ════════════════════════════════════════════
-window.addEventListener('DOMContentLoaded', lockContent);
-
-// ════════════════════════════════════════════
-// PAGE SWITCHER
-// ════════════════════════════════════════════
-function showPage(id){
-  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-}
-
-// ════════════════════════════════════════════
-// LOGIN
-// ════════════════════════════════════════════
-function checkPw(){
-  var v=document.getElementById('pw-in').value.trim();
-  if(v==='7777'){
-    document.getElementById('pw-err').classList.add('hidden');
-    showPage('page-home');
-  } else {
-    document.getElementById('pw-err').classList.remove('hidden');
-    var w=document.getElementById('pw-wrap');
-    w.classList.add('shake');
-    setTimeout(function(){w.classList.remove('shake')},400);
-    document.getElementById('pw-in').value='';
-    document.getElementById('pw-in').focus();
-  }
-}
-
-// ════════════════════════════════════════════
-// START TEST
-// ════════════════════════════════════════════
-function startTest(){
-  shuffled=shuffle(QUESTIONS.slice());
-  curIdx=0; score=0; timeLeft=1800;
-  showPage('page-test');
-  renderQ();
-  startTimer();
-  // Eye rest after 20 min
-  clearTimeout(eyeTimer);
-  eyeTimer=setTimeout(function(){
-    if(document.getElementById('page-test').classList.contains('active')){
-      document.getElementById('eye-banner').classList.remove('hidden');
-    }
-  }, 20*60*1000);
-}
-
-// ════════════════════════════════════════════
-// RENDER QUESTION
-// ════════════════════════════════════════════
-function renderQ(){
-  var q=shuffled[curIdx];
-  var total=shuffled.length;
-  var LTRS=['A','B','C','D','E','F','G'];
-
-  document.getElementById('q-num').textContent=(curIdx+1)+' / '+total;
-  document.getElementById('score-live').textContent='✅ '+score;
-  document.getElementById('q-lbl').textContent='Сұрақ '+(curIdx+1);
-  document.getElementById('q-text').textContent=q.question;
-  document.getElementById('prog-bar').style.width=(curIdx/total*100)+'%';
-
-  // Shuffle option order
-  var order=shuffle(q.options.map(function(_,i){return i}));
-
-  var cont=document.getElementById('q-opts');
-  cont.innerHTML='';
-
-  order.forEach(function(origIdx,pos){
-    var btn=document.createElement('button');
-    btn.className='opt';
-    btn.dataset.orig=origIdx;
-    btn.innerHTML='<span class="opt-L">'+LTRS[pos]+'</span><span>'+escHtml(q.options[origIdx])+'</span>';
-    btn.addEventListener('click',function(){handleAnswer(btn,origIdx,q.correct)});
-    cont.appendChild(btn);
-  });
-
-  // Re-trigger animation
-  var card=document.getElementById('q-card');
-  card.style.animation='none';
-  void card.offsetWidth;
-  card.style.animation='';
-}
-
-function escHtml(s){
-  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-}
-
-// ════════════════════════════════════════════
-// ANSWER
-// ════════════════════════════════════════════
-function handleAnswer(btn, selIdx, corrIdx){
-  var all=document.querySelectorAll('.opt');
-  all.forEach(function(b){b.classList.add('locked')});
-
-  var ok=(selIdx===corrIdx);
-  if(ok){
-    btn.classList.add('correct');
-    score++;
-    document.getElementById('score-live').textContent='✅ '+score;
-  } else {
-    btn.classList.add('wrong');
-    all.forEach(function(b){
-      if(Number(b.dataset.orig)===corrIdx) b.classList.add('correct');
-    });
-  }
-
-  setTimeout(function(){
-    curIdx++;
-    if(curIdx>=shuffled.length) finishTest(false);
-    else renderQ();
-  }, ok ? 1100 : 1700);
-}
-
-// ════════════════════════════════════════════
-// TIMER
-// ════════════════════════════════════════════
-function startTimer(){
-  clearInterval(timerID);
-  updateTimer();
-  timerID=setInterval(function(){
-    timeLeft--;
-    updateTimer();
-    if(timeLeft<=0){clearInterval(timerID);finishTest(true);}
-  },1000);
-}
-function updateTimer(){
-  var mm=String(Math.floor(timeLeft/60)).padStart(2,'0');
-  var ss=String(timeLeft%60).padStart(2,'0');
-  var el=document.getElementById('timer');
-  el.textContent='⏱ '+mm+':'+ss;
-  el.classList.toggle('danger',timeLeft<=120);
-}
-
-// ════════════════════════════════════════════
-// FINISH
-// ════════════════════════════════════════════
-function finishTest(timeout){
-  clearInterval(timerID);
-  clearTimeout(eyeTimer);
-  var total=shuffled.length;
-  var wrong=total-score;
-  var pct=Math.round(score/total*100);
-
-  document.getElementById('rs-c').textContent=score;
-  document.getElementById('rs-w').textContent=wrong;
-  document.getElementById('rs-t').textContent=total;
-  document.getElementById('res-big').textContent=score+' / '+total;
-  document.getElementById('res-pct').textContent=pct+'%';
-  document.getElementById('res-title').textContent=timeout?'Уақыт бітті!':resTitle(pct);
-  document.getElementById('res-emoji').textContent=resEmoji(pct,timeout);
-  showPage('page-result');
-  requestAnimationFrame(function(){
-    requestAnimationFrame(function(){
-      document.getElementById('res-prog').style.width=pct+'%';
-    });
-  });
-}
-function resTitle(p){
-  if(p>=90)return'Тамаша нәтиже! 🎉';
-  if(p>=70)return'Жақсы нәтиже!';
-  if(p>=50)return'Орташа нәтиже';
-  return'Қайта оқып, тапсырыңыз';
-}
-function resEmoji(p,t){
-  if(t)return'⏰';
-  if(p>=90)return'🏆';
-  if(p>=70)return'🎯';
-  if(p>=50)return'📚';
-  return'💪';
-}
-
-function retakeTest(){startTest();}
-function goHome(){
-  clearInterval(timerID);clearTimeout(eyeTimer);
-  showPage('page-home');
-}
-
-// ════════════════════════════════════════════
-// EYE-CARE MODES
-// ════════════════════════════════════════════
-function toggleDark(){
-  isDark=!isDark;
-  if(isDark){isWarm=false;document.body.classList.remove('warm');setOn('btn-warm',false);}
-  document.body.classList.toggle('dark',isDark);
-  setOn('btn-dark',isDark);
-}
-function toggleWarm(){
-  isWarm=!isWarm;
-  if(isWarm){isDark=false;document.body.classList.remove('dark');setOn('btn-dark',false);}
-  document.body.classList.toggle('warm',isWarm);
-  setOn('btn-warm',isWarm);
-}
-function toggleFont(){
-  isLarge=!isLarge;
-  document.body.classList.toggle('large',isLarge);
-  setOn('btn-font',isLarge);
-}
-function setOn(id,on){
-  document.querySelectorAll('#'+id).forEach(function(b){b.classList.toggle('on',on)});
-}
-
-// ════════════════════════════════════════════
-// SHUFFLE (Fisher-Yates)
-// ════════════════════════════════════════════
-function shuffle(arr){
-  for(var i=arr.length-1;i>0;i--){
-    var j=Math.floor(Math.random()*(i+1));
-    var t=arr[i];arr[i]=arr[j];arr[j]=t;
-  }
-  return arr;
-}
-
-// ════════════════════════════════════════════
-// TOAST
-// ════════════════════════════════════════════
-function showToast(msg){
-  var el=document.getElementById('toast');
-  el.textContent=msg;el.classList.remove('hidden');
-  clearTimeout(toastT);
-  toastT=setTimeout(function(){el.classList.add('hidden')},2500);
-}
-
-// ════════════════════════════════════════════
-// CONTENT PROTECTION
-// ════════════════════════════════════════════
-function lockContent(){
-  document.addEventListener('contextmenu',function(e){
-    e.preventDefault();showToast('🚫 Мәтінді көшіруге болмайды');
-  });
-  document.addEventListener('keydown',function(e){
-    var ctrl=e.ctrlKey||e.metaKey;
-    if(ctrl && ['c','x','v','u','s','a'].indexOf(e.key.toLowerCase())>=0){
-      e.preventDefault();showToast('🚫 Мәтінді көшіруге болмайды');return false;
-    }
-    if(e.key==='F12'){e.preventDefault();return false;}
-    if(ctrl&&e.shiftKey&&e.key.toLowerCase()==='i'){e.preventDefault();return false;}
-  });
-  ['copy','cut','paste'].forEach(function(ev){
-    document.addEventListener(ev,function(e){
-      e.preventDefault();showToast('🚫 Мәтінді көшіруге болмайды');
-    });
-  });
-  document.addEventListener('selectstart',function(e){
-    if(e.target.closest('.q-text,.q-opts')){e.preventDefault();}
-  });
-  document.addEventListener('dragstart',function(e){e.preventDefault();});
-}
-</script>
+<script src="script.js"></script>
 </body>
 </html>
