@@ -3,52 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz Portal</title>
+    <title>Modern Test System</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body oncontextmenu="return false">
 
-    <audio id="bg-music" loop>
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-    </audio>
-
-    <div id="login-screen" class="screen">
-        <div class="card shadow">
+    <div id="auth-page" class="page">
+        <div class="card">
             <h2>Жүйеге кіру</h2>
-            <input type="password" id="pass-input" placeholder="Парольді енгізіңіз (7777)">
-            <button class="primary-btn" onclick="checkLogin()">Кіру</button>
-            <p id="error-msg" class="error-text"></p>
+            <p>Жалғастыру үшін пароль енгізіңіз</p>
+            <input type="password" id="pass-input" placeholder="Пароль: 7777">
+            <button onclick="checkAuth()">Кіру</button>
+            <p id="auth-msg" class="error-text"></p>
         </div>
     </div>
 
-    <div id="home-screen" class="screen hidden">
-        <div class="card shadow">
-            <h1>Қош келдіңіз!</h1>
-            <p>Тест 100 сұрақтан тұрады. Сәттілік!</p>
-            <button class="primary-btn" onclick="startQuiz()">Бастау</button>
+    <div id="main-page" class="page hidden">
+        <div class="card">
+            <h1>Тестке қош келдіңіз!</h1>
+            <div class="controls">
+                <button onclick="toggleMode('dark')">🌙 Dark Mode</button>
+                <button onclick="toggleMode('eye')">☁️ Eye Comfort</button>
+                <button onclick="toggleMode('large')">A+ Шрифт</button>
+            </div>
+            <p>Сұрақтар саны: <span id="q-total-info">100</span></p>
+            <p>Уақыт: 30 минут</p>
+            <button class="primary-btn" onclick="startQuiz()">Тестті бастау</button>
+            <div class="footer">Жасаған — Ayan KZ</div>
         </div>
     </div>
 
-    <div id="quiz-screen" class="screen hidden">
-        <div class="top-bar">
-            <span id="q-counter">1 / 100</span>
-            <div id="progress-wrapper"><div id="progress-fill"></div></div>
-        </div>
-        <div class="card quiz-card">
-            <h3 id="question-display"></h3>
-            <div id="options-box" class="options-grid"></div>
-        </div>
-    </div>
-
-    <div id="result-screen" class="screen hidden">
-        <div class="card shadow">
-            <h2>Тест аяқталды</h2>
-            <div id="final-result"></div>
-            <button class="primary-btn" onclick="location.reload()">Қайта бастау</button>
+    <div id="quiz-page" class="page hidden">
+        <div class="quiz-container">
+            <div class="quiz-header">
+                <div class="timer" id="timer">30:00</div>
+                <div class="q-progress">Сұрақ: <span id="current-idx">1</span> / <span id="total-idx">100</span></div>
+            </div>
+            <div class="progress-bar-wrap">
+                <div id="progress-fill" class="progress-fill"></div>
+            </div>
+            <h2 id="question-text">Сұрақ жүктелуде...</h2>
+            <div id="answer-list" class="answer-grid"></div>
         </div>
     </div>
 
-    <div id="music-control" class="music-btn" onclick="toggleMusic()">🎵</div>
+    <div id="result-page" class="page hidden">
+        <div class="card">
+            <h2>Тест аяқталды!</h2>
+            <div id="stats" class="stats">
+                </div>
+            <button class="primary-btn" onclick="location.reload()">Қайта тапсыру</button>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
