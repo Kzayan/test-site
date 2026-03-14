@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>QazTest | Онлайн тест жүйесі</title>
+    <title>QazTest | Бағдарламалау тесті</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -23,14 +23,14 @@
         <!-- Басты бет -->
         <div id="homeScreen" class="screen">
             <div class="card">
-                <h1>🧠 QazTest <span class="blue-accent" id="totalQuestionsHome">0</span></h1>
-                <div class="subhead">Бағдарламалау тесті — барлық сұрақтар</div>
+                <h1>🧠 QazTest <span class="blue-accent" id="totalQuestionsHome">84</span></h1>
+                <div class="subhead">Бағдарламалау тесті — 84 сұрақ</div>
                 
                 <div class="feature-box">
                     <p>📌 <strong>Тест сипаттамасы:</strong></p>
                     <ul>
-                        <li>✔️ Сұрақтар саны: <span id="totalQCount">0</span></li>
-                        <li>✔️ Әр сұрақта бірнеше жауап нұсқасы</li>
+                        <li>✔️ Сұрақтар саны: <span id="totalQCount">84</span></li>
+                        <li>✔️ Әр сұрақта 5 жауап нұсқасы</li>
                         <li>✔️ Жауап таңдаған соң нәтиже көрсетіледі</li>
                         <li>✔️ Келесі сұрақ автоматты түрде жүктеледі</li>
                         <li>✔️ Таймер: 30 минут</li>
@@ -48,12 +48,12 @@
             </div>
         </div>
 
-        <!-- Тест беті (сұрақтар) -->
+        <!-- Тест беті -->
         <div id="testScreen" class="screen">
             <div class="card">
                 <div class="stats-bar">
                     <div class="progress-container">
-                        <div class="progress-label"><span id="currentQNo">1</span>/<span id="totalQ">0</span></div>
+                        <div class="progress-label"><span id="currentQNo">1</span>/<span id="totalQ">84</span></div>
                         <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
                     </div>
                     <div class="timer-box" id="timerDisplay">⏳ 30:00</div>
@@ -65,7 +65,7 @@
                 </div>
 
                 <div class="test-footer">
-                    <span class="badge" id="answeredCounter">0/0</span>
+                    <span class="badge" id="answeredCounter">0/84</span>
                 </div>
             </div>
         </div>
@@ -76,7 +76,7 @@
                 <h1>📊 Нәтиже</h1>
                 <div class="result-summary">
                     <div class="score-number" id="finalScore">0</div>
-                    <div style="font-size: 1.6rem; font-weight: 300;" id="finalScoreText">/ 0 балл</div>
+                    <div style="font-size: 1.6rem; font-weight: 300;" id="finalScoreText">/ 84 балл</div>
                     <div class="result-details">
                         <div class="result-item">
                             <span class="result-label">Дұрыс:</span>
