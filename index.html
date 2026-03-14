@@ -1,36 +1,40 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="kk">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Онлайн тест жүйесі</title>
+  <title>Онлайн Тест</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body oncontextmenu="return false;">
+  <!-- Пароль енгізу беті -->
+  <div id="login-page" class="page">
+    <h2>Пароль енгізіңіз</h2>
+    <input type="password" id="password-input" placeholder="Пароль">
+    <button onclick="checkPassword()">Кіру</button>
+    <p id="login-message"></p>
+  </div>
+
   <!-- Басты бет -->
-  <div id="home" class="page active">
-    <h1>Онлайн тест жүйесі</h1>
-    <button id="startBtn">Тестті бастау</button>
+  <div id="main-page" class="page hidden">
+    <h1>Онлайн Тест</h1>
+    <button onclick="startTest()">Тестті бастау</button>
   </div>
 
   <!-- Тест беті -->
-  <div id="quiz" class="page">
-    <div class="progress-container">
-      <div id="progressBar"></div>
-    </div>
-    <div id="timer">30:00</div>
-    <div id="questionContainer">
-      <h2 id="questionText"></h2>
-      <div id="options"></div>
-    </div>
+  <div id="test-page" class="page hidden">
+    <div id="progress-bar"></div>
+    <div id="timer"></div>
+    <h3 id="question-number"></h3>
+    <p id="question-text"></p>
+    <div id="answers"></div>
   </div>
 
   <!-- Нәтиже беті -->
-  <div id="result" class="page">
+  <div id="result-page" class="page hidden">
     <h2>Нәтиже</h2>
-    <p id="scoreText"></p>
-    <p id="details"></p>
-    <button id="retryBtn">Қайта тапсыру</button>
+    <p id="result-summary"></p>
+    <button onclick="restartTest()">Қайта тапсыру</button>
   </div>
 
   <footer>
