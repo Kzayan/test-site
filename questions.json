@@ -1,1102 +1,320 @@
-[
-  {
-    "question": "Кодтағы қателерді анықтау процесі қалай аталады?",
-    "options": [
-      "Компиляция",
-      "Дебаггинг",
-      "Тестілеу",
-      "Орындау",
-      "Инсталляция"
-    ],
-    "correct": "Дебаггинг"
-  },
-  {
-    "question": "Синтаксистік қате дегеніміз не?",
-    "options": [
-      "Логикалық қате",
-      "Бағдарлама баяу жұмыс істеуі",
-      "Жазылу ережесінің бұзылуы",
-      "Дерекқор қатесі",
-      "Дизайн қатесі"
-    ],
-    "correct": "Жазылу ережесінің бұзылуы"
-  },
-  {
-    "question": "Логикалық қате кезінде:",
-    "options": [
-      "Бағдарлама мүлде ашылмайды",
-      "Қате нәтиже береді",
-      "Компьютер өшеді",
-      "Файл жойылады",
-      "Желі үзіледі"
-    ],
-    "correct": "Қате нәтиже береді"
-  },
-  {
-    "question": "Runtime error қашан пайда болады?",
-    "options": [
-      "Код жазу кезінде",
-      "Компиляция кезінде",
-      "Орындау кезінде",
-      "Жобалау кезінде",
-      "Орнату кезінде"
-    ],
-    "correct": "Орындау кезінде"
-  },
-  {
-    "question": "Debugger не үшін керек?",
-    "options": [
-      "Код жазу",
-      "Қате іздеу",
-      "Сурет салу",
-      "Файл сақтау",
-      "Интернетке шығу"
-    ],
-    "correct": "Сурет салу"
-  },
-  {
-    "question": "print() функциясы не үшін қолданылады?",
-    "options": [
-      "Қате жою",
-      "Мәлімет шығару",
-      "Файл ашу",
-      "Желіге қосылу",
-      "Код жою"
-    ],
-    "correct": "Мәлімет шығару"
-  },
-  {
-    "question": "try-except блогы не үшін керек?",
-    "options": [
-      "Цикл құру",
-      "Шарт жазу",
-      "Қателерді өңдеу",
-      "Айнымалы құру",
-      "Файл жою"
-    ],
-    "correct": "Қателерді өңдеу"
-  },
-  {
-    "question": "IDE дегеніміз:",
-    "options": [
-      "Операциялық жүйе",
-      "Бағдарламалау ортасы",
-      "Вирус",
-      "Драйвер",
-      "Сервер"
-    ],
-    "correct": "Бағдарламалау ортасы"
-  },
-  {
-    "question": "Infinite loop дегеніміз:",
-    "options": [
-      "Бір рет орындалатын цикл",
-      "Шексіз цикл",
-      "Қате код",
-      "Айнымалы",
-      "Функция"
-    ],
-    "correct": "Шексіз цикл"
-  },
-  {
-    "question": "Null мәні дегеніміз:",
-    "options": [
-      "0 саны",
-      "Бос мән",
-      "1 саны",
-      "Теріс сан",
-      "Символ"
-    ],
-    "correct": "Бос мән"
-  },
-  {
-    "question": "Логикалық қатені табудың ең тиімді жолы:",
-    "options": [
-      "Компьютерді өшіру",
-      "Кодты қайта көшіру",
-      "Қадамдап орындау (step-by-step)",
-      "Интернетті тексеру",
-      "Принтер қосу"
-    ],
-    "correct": "Қадамдап орындау (step-by-step)"
-  },
-  {
-    "question": "Синтаксистік қате табылғанда:",
-    "options": [
-      "Бағдарлама дұрыс жұмыс істейді",
-      "Компиляция тоқтайды",
-      "Нәтиже баяу шығады",
-      "Файл ашылады",
-      "Желі үзіледі"
-    ],
-    "correct": "Компиляция тоқтайды"
-  },
-  {
-    "question": "Айнымалы анықталмаса қандай қате шығады?",
-    "options": [
-      "Type error",
-      "Name error",
-      "Index error",
-      "Logic error",
-      "Value error"
-    ],
-    "correct": "Name error"
-  },
-  {
-    "question": "Массив шегінен тыс элементке жүгінсек:",
-    "options": [
-      "Name error",
-      "Type error",
-      "Index error",
-      "Syntax error",
-      "Key error"
-    ],
-    "correct": "Index error"
-  },
-  {
-    "question": "Type error қашан болады?",
-    "options": [
-      "Қате атау жазылса",
-      "Түрлер сәйкес келмесе",
-      "Индекс дұрыс болмаса",
-      "Цикл тоқтаса",
-      "Файл жабылса"
-    ],
-    "correct": "Түрлер сәйкес келмесе"
-  },
-  {
-    "question": "Қатені қайталамау үшін не істеу керек?",
-    "options": [
-      "Кодты тестілеу",
-      "Өшіру",
-      "Компьютер ауыстыру",
-      "Интернет қосу",
-      "Бағдарламаны жасыру"
-    ],
-    "correct": "Кодты тестілеу"
-  },
-  {
-    "question": "assert командасы не үшін қолданылады?",
-    "options": [
-      "Файл ашу",
-      "Мәлімет басу",
-      "Шартты тексеру",
-      "Цикл жасау",
-      "Айнымалы жою"
-    ],
-    "correct": "Шартты тексеру"
-  },
-  {
-    "question": "Лог-файл не үшін керек?",
-    "options": [
-      "Музыка сақтау",
-      "Қате жазбаларын сақтау",
-      "Видео көру",
-      "Сурет салу",
-      "Интернетке қосылу"
-    ],
-    "correct": "Қате жазбаларын сақтау"
-  },
-  {
-    "question": "Refactoring дегеніміз:",
-    "options": [
-      "Кодты жою",
-      "Код құрылымын жақсарту",
-      "Қате қосу",
-      "Файл форматтау",
-      "Компьютер тазалау"
-    ],
-    "correct": "Код құрылымын жақсарту"
-  },
-  {
-    "question": "Unit тестілеу не тексереді?",
-    "options": [
-      "Бүкіл жүйені",
-      "Бір модульді",
-      "Серверді",
-      "Интернетті",
-      "Дизайнды"
-    ],
-    "correct": "Бір модульді"
-  },
-  {
-    "question": "ValueError қашан пайда болады?",
-    "options": [
-      "Айнымалы жоқ болса",
-      "Мәлімет түрі сәйкес келмесе",
-      "Дұрыс емес мән енгізілсе",
-      "Индекс артық болса",
-      "Файл табылмаса"
-    ],
-    "correct": "Дұрыс емес мән енгізілсе"
-  },
-  {
-    "question": "FileNotFoundError қашан шығады?",
-    "options": [
-      "Айнымалы жоқ болса",
-      "Файл табылмаса",
-      "Түр сәйкес келмесе",
-      "Шарт қате болса",
-      "Цикл тоқтаса"
-    ],
-    "correct": "Файл табылмаса"
-  },
-  {
-    "question": "except блогы қай кезде орындалады?",
-    "options": [
-      "Қате болмаса",
-      "Қате пайда болса",
-      "Әрқашан",
-      "Цикл ішінде ғана",
-      "Функция алдында"
-    ],
-    "correct": "Қате пайда болса"
-  },
-  {
-    "question": "finally блогы:",
-    "options": [
-      "Ешқашан орындалмайды",
-      "Қате болса ғана орындалады",
-      "Әрқашан орындалады",
-      "Цикл жасайды",
-      "Айнымалы құрады"
-    ],
-    "correct": "Әрқашан орындалады"
-  },
-  {
-    "question": "Логикалық қателерді табу үшін:",
-    "options": [
-      "Кодты талдау керек",
-      "Компьютер ауыстыру керек",
-      "Файлды жою керек",
-      "Интернетті өшіру керек",
-      "Принтер қосу керек"
-    ],
-    "correct": "Компьютер ауыстыру керек"
-  },
-  {
-    "question": "Breakpoint дегеніміз:",
-    "options": [
-      "Қате түрі",
-      "Бағдарламаны тоқтату нүктесі",
-      "Айнымалы",
-      "Цикл",
-      "Файл"
-    ],
-    "correct": "Бағдарламаны тоқтату нүктесі"
-  },
-  {
-    "question": "Stack trace нені көрсетеді?",
-    "options": [
-      "Дизайнды",
-      "Қате шыққан жолды",
-      "Интернет жылдамдығын",
-      "Файл өлшемін",
-      "Процессор түрін"
-    ],
-    "correct": "Қате шыққан жолды"
-  },
-  {
-    "question": "Тестілеудің мақсаты:",
-    "options": [
-      "Қате табу",
-      "Кодты жасыру",
-      "Компьютерді өшіру",
-      "Желі қосу",
-      "Файлды көшіру"
-    ],
-    "correct": "Қате табу"
-  },
-  {
-    "question": "Қай қате бағдарлама тоқтауына әкелуі мүмкін?",
-    "options": [
-      "Логикалық",
-      "Runtime error",
-      "Комментарий қатесі",
-      "Дизайн қатесі",
-      "Стиль қатесі"
-    ],
-    "correct": "Runtime error"
-  },
-  {
-    "question": "Debugging процесінің соңғы мақсаты:",
-    "options": [
-      "Кодты жою",
-      "Қатені түзету",
-      "Файлды жабу",
-      "Компьютерді өшіру",
-      "Интернетке қосылу"
-    ],
-    "correct": "Қатені түзету"
-  },
-  {
-    "question": "SyntaxError қай кезде шығады?",
-    "options": [
-      "Орындау кезінде",
-      "Компиляция кезінде",
-      "Интернет жоқ кезде",
-      "Файл жабылғанда",
-      "Цикл тоқтағанда"
-    ],
-    "correct": "Орындау кезінде"
-  },
-  {
-    "question": "ZeroDivisionError қашан пайда болады?",
-    "options": [
-      "0-ге бөлгенде",
-      "Айнымалы жоқ болса",
-      "Түр сәйкес келмесе",
-      "Индекс артық болса",
-      "Файл ашылмаса"
-    ],
-    "correct": "0-ге бөлгенде"
-  },
-  {
-    "question": "Кодтағы комментарий не үшін керек?",
-    "options": [
-      "Қате шығару",
-      "Түсіндіру жазу",
-      "Файл жою",
-      "Айнымалы құру",
-      "Цикл жасау"
-    ],
-    "correct": "Түсіндіру жазу"
-  },
-  {
-    "question": "Қате табылғаннан кейін бірінші қадам:",
-    "options": [
-      "Кодты өшіру",
-      "Себебін анықтау",
-      "Компьютерді өшіру",
-      "Жаңа файл ашу",
-      "Интернет қосу"
-    ],
-    "correct": "Кодты өшіру"
-  },
-  {
-    "question": "while циклі тоқтамаса, бұл:",
-    "options": [
-      "Syntax error",
-      "Логикалық қате",
-      "Type error",
-      "Name error",
-      "Value error"
-    ],
-    "correct": "Syntax error"
-  },
-  {
-    "question": "Функция дұрыс нәтиже бермесе:",
-    "options": [
-      "Логикалық қате бар",
-      "Компьютер бұзылған",
-      "Интернет жоқ",
-      "Файл ашылмаған",
-      "Драйвер жоқ"
-    ],
-    "correct": "Логикалық қате бар"
-  },
-  {
-    "question": "IDE-де қызыл сызық нені білдіреді?",
-    "options": [
-      "Дұрыс код",
-      "Синтаксистік қате",
-      "Интернет бар",
-      "Файл сақталған",
-      "Принтер қосылған"
-    ],
-    "correct": "Синтаксистік қате"
-  },
-  {
-    "question": "Exception дегеніміз:",
-    "options": [
-      "Айнымалы",
-      "Қате жағдай",
-      "Цикл",
-      "Функция",
-      "Сервер"
-    ],
-    "correct": "Қате жағдай"
-  },
-  {
-    "question": "Кодты кішкене бөліктермен тексеру:",
-    "options": [
-      "Инсталляция",
-      "Модульдік тексеру",
-      "Форматтау",
-      "Архивтеу",
-      "Дизайн"
-    ],
-    "correct": "Инсталляция"
-  },
-  {
-    "question": "Қай әдіс қателерді азайтады?",
-    "options": [
-      "Тестілеу",
-      "Көшіру",
-      "Өшіру",
-      "Форматтамау",
-      "Компьютер ауыстыру"
-    ],
-    "correct": "Тестілеу"
-  },
-  {
-    "question": "KeyError қашан пайда болады?",
-    "options": [
-      "Айнымалы жоқ болса",
-      "Сөздікте (dict) жоқ кілт қолданылса",
-      "0-ге бөлгенде",
-      "Түр сәйкес келмесе",
-      "Файл ашылмаса"
-    ],
-    "correct": "Сөздікте (dict) жоқ кілт қолданылса"
-  },
-  {
-    "question": "ImportError дегеніміз:",
-    "options": [
-      "Айнымалы қатесі",
-      "Модуль жүктелмесе",
-      "Индекс қатесі",
-      "Логикалық қате",
-      "Шарт қатесі"
-    ],
-    "correct": "Модуль жүктелмесе"
-  },
-  {
-    "question": "Кодты қайта қарау (code review) мақсаты:",
-    "options": [
-      "Қате табу",
-      "Файл жою",
-      "Интернет қосу",
-      "Компьютер өшіру",
-      "Дизайн өзгерту"
-    ],
-    "correct": "Қате табу"
-  },
-  {
-    "question": "Traceback нені көрсетеді?",
-    "options": [
-      "Файл көлемін",
-      "Қате шыққан жолдар тізбегін",
-      "Интернет жылдамдығын",
-      "Компьютер жадын",
-      "Экран өлшемін"
-    ],
-    "correct": "Қате шыққан жолдар тізбегін"
-  },
-  {
-    "question": "Бағдарламаны тест мәліметтермен тексеру:",
-    "options": [
-      "Архивтеу",
-      "Тестілеу",
-      "Орнату",
-      "Форматтау",
-      "Көшіру"
-    ],
-    "correct": "Тестілеу"
-  },
-  {
-    "question": "Қай жағдайда try блогы орындалады?",
-    "options": [
-      "Қате болса ғана",
-      "Әрқашан бірінші орындалады",
-      "Ешқашан",
-      "Цикл ішінде ғана",
-      "Файл жабылғанда"
-    ],
-    "correct": "Әрқашан бірінші орындалады"
-  },
-  {
-    "question": "except бірнешеу болуы мүмкін бе?",
-    "options": [
-      "Жоқ",
-      "Иә",
-      "Тек біреу",
-      "Тек циклде",
-      "Тек функцияда"
-    ],
-    "correct": "Иә"
-  },
-  {
-    "question": "Debugging құралдарының бірі:",
-    "options": [
-      "Paint",
-      "Debugger",
-      "Word",
-      "Excel",
-      "Browser"
-    ],
-    "correct": "Debugger"
-  },
-  {
-    "question": "Кодтағы артық жолдарды жою:",
-    "options": [
-      ") Refactoring",
-      "Компиляция",
-      "Инсталляция",
-      "Архивтеу",
-      "Көшіру"
-    ],
-    "correct": ") Refactoring"
-  },
-  {
-    "question": "Қате табылған соң не істеу керек?",
-    "options": [
-      "Елемеу",
-      "Түзету",
-      "Жою",
-      "Компьютер өшіру",
-      "Файл жабу"
-    ],
-    "correct": "Түзету"
-  },
-  {
-    "question": "AttributeError қашан шығады?",
-    "options": [
-      "0-ге бөлгенде",
-      "Объектіде жоқ қасиет шақырылса",
-      "Индекс артық болса",
-      "Файл табылмаса",
-      "Айнымалы жоқ болса"
-    ],
-    "correct": "Объектіде жоқ қасиет шақырылса"
-  },
-  {
-    "question": "Memory error себебі:",
-    "options": [
-      "Жад жетіспеуі",
-      "Интернет жоқ",
-      "Синтаксис қате",
-      "Индекс үлкен",
-      "Файл жабық"
-    ],
-    "correct": "Жад жетіспеуі"
-  },
-  {
-    "question": "Қай әдіс қатені тез табуға көмектеседі?",
-    "options": [
-      "Кодты форматтау",
-      "Қадамдап орындау",
-      "Файл көшіру",
-      "Өшіру",
-      "Архивтеу"
-    ],
-    "correct": "Қадамдап орындау"
-  },
-  {
-    "question": "Тест кейс дегеніміз:",
-    "options": [
-      "Қате түрі",
-      "Тексеру сценарийі",
-      "Айнымалы",
-      "Файл",
-      "Сервер"
-    ],
-    "correct": "Тексеру сценарийі"
-  },
-  {
-    "question": "Boundary value testing не тексереді?",
-    "options": [
-      "Орта мәндерді",
-      "Шектік мәндерді",
-      "Тек мәтінді",
-      "Дизайнды",
-      "Интернетті"
-    ],
-    "correct": "Шектік мәндерді"
-  },
-  {
-    "question": "Infinite recursion себебі:",
-    "options": [
-      "Шарт жоқ",
-      "Файл жоқ",
-      "Интернет жоқ",
-      "Индекс артық",
-      "Түр сәйкес емес"
-    ],
-    "correct": "Шарт жоқ"
-  },
-  {
-    "question": "raise командасы:",
-    "options": [
-      "Қате тастау",
-      "Цикл құру",
-      "Айнымалы жою",
-      "Файл ашу",
-      "Мәлімет шығару"
-    ],
-    "correct": "Қате тастау"
-  },
-  {
-    "question": "Қате туралы хабарлама не үшін маңызды?",
-    "options": [
-      "Уақыт өткізу",
-      "Себебін түсіну",
-      "Дизайн көру",
-      "Файл өлшеу",
-      "Интернет тексеру"
-    ],
-    "correct": "Себебін түсіну"
-  },
-  {
-    "question": "Regression testing мақсаты:",
-    "options": [
-      "Жаңа қате қосу",
-      "Бұрынғы қателер қайталанбауын тексеру",
-      "Файл жою",
-      "Компьютер жаңарту",
-      "Дизайн өзгерту"
-    ],
-    "correct": "Бұрынғы қателер қайталанбауын тексеру"
-  },
-  {
-    "question": "Кодты жиі сақтау не үшін керек?",
-    "options": [
-      "Қате көбейту",
-      "Мәлімет жоғалтпау",
-      "Интернет қосу",
-      "Форматтау",
-      "Архивтеу"
-    ],
-    "correct": "Мәлімет жоғалтпау"
-  },
-  {
-    "question": "Логикалық қате табудың бір жолы:",
-    "options": [
-      "Нәтижені күтілген мәнмен салыстыру",
-      "Компьютер өшіру",
-      "Файл жою",
-      "Интернет қосу",
-      "Архивтеу"
-    ],
-    "correct": "Нәтижені күтілген мәнмен салыстыру"
-  },
-  {
-    "question": "Exception handling мақсаты:",
-    "options": [
-      "Бағдарламаны тоқтату",
-      "Қатені басқару",
-      "Файл ашу",
-      "Айнымалы жою",
-      "Дизайн жасау"
-    ],
-    "correct": "Бағдарламаны тоқтату"
-  },
-  {
-    "question": "Кодтың оқылуын жақсарту:",
-    "options": [
-      "Түсінікті атаулар қолдану",
-      "Барлығын бір жолға жазу",
-      "Комментарийсіз жазу",
-      "Форматтамау",
-      "Қысқарту"
-    ],
-    "correct": "Түсінікті атаулар қолдану"
-  },
-  {
-    "question": "Unit test қашан жазылады?",
-    "options": [
-      "Кодтан кейін",
-      "Кодпен бірге",
-      "Ешқашан",
-      "Орнатқанда",
-      "Архивтегенде"
-    ],
-    "correct": "Кодпен бірге"
-  },
-  {
-    "question": "Bug дегеніміз:",
-    "options": [
-      "Дұрыс код",
-      "Қате",
-      "Сервер",
-      "Айнымалы",
-      "Файл"
-    ],
-    "correct": "Қате"
-  },
-  {
-    "question": "Debugging мақсаты:",
-    "options": [
-      "Қате қосу",
-      "Қате табу және түзету",
-      "Файл жою",
-      "Интернет өшіру",
-      "Компьютер ауыстыру"
-    ],
-    "correct": "Қате қосу"
-  },
-  {
-    "question": "try блогында не жазылады?",
-    "options": [
-      "Қауіпті код",
-      "Комментарий",
-      "Айнымалы аты",
-      "Файл аты",
-      "Дизайн"
-    ],
-    "correct": "Дизайн"
-  },
-  {
-    "question": "finally көбіне не үшін қолданылады?",
-    "options": [
-      "Файл жабу",
-      "Қате шығару",
-      "Цикл құру",
-      "Айнымалы жою",
-      "Дизайн жасау"
-    ],
-    "correct": "Файл жабу"
-  },
-  {
-    "question": "Кодты тексерудің автоматты түрі:",
-    "options": [
-      "Manual testing",
-      "Automated testing",
-      "Архивтеу",
-      "Форматтау",
-      "Көшіру"
-    ],
-    "correct": "Manual testing"
-  },
-  {
-    "question": "Stack overflow себебі:",
-    "options": [
-      "Терең рекурсия",
-      "Интернет жоқ",
-      "Файл жоқ",
-      "Индекс үлкен",
-      "Түр сәйкес емес"
-    ],
-    "correct": "Терең рекурсия"
-  },
-  {
-    "question": "Input тексеру не үшін қажет?",
-    "options": [
-      "Қате болдырмау",
-      "Интернет қосу",
-      "Файл жою",
-      "Дизайн өзгерту",
-      "Архивтеу"
-    ],
-    "correct": "Қате болдырмау"
-  },
-  {
-    "question": "Қате шыққан жолды табу үшін:",
-    "options": [
-      "Traceback қарау",
-      ") Компьютер өшіру",
-      "Файл жабу",
-      "Интернет тексеру",
-      "Архивтеу"
-    ],
-    "correct": ") Компьютер өшіру"
-  },
-  {
-    "question": "Version control не үшін керек?",
-    "options": [
-      "Код нұсқаларын сақтау",
-      "Файл жою",
-      "Интернет қосу",
-      "Дизайн өзгерту",
-      "Компьютер өшіру"
-    ],
-    "correct": "Код нұсқаларын сақтау"
-  },
-  {
-    "question": "Git дегеніміз:",
-    "options": [
-      "Операциялық жүйе",
-      "Нұсқа бақылау жүйесі",
-      "Сервер",
-      "Айнымалы",
-      "Кате түрі"
-    ],
-    "correct": "Нұсқа бақылау жүйесі"
-  },
-  {
-    "question": "Merge conflict қашан болады?",
-    "options": [
-      "Бір файлды екі адам өзгерткенде",
-      "Интернет жоқ кезде",
-      "Файл жойылғанда",
-      "Компьютер өшкенде",
-      "Индекс үлкенде"
-    ],
-    "correct": "Бір файлды екі адам өзгерткенде"
-  },
-  {
-    "question": "Test coverage нені көрсетеді?",
-    "options": [
-      "Код көлемін",
-      "Тестпен қамтылған пайызды",
-      "Интернет жылдамдығын",
-      "Файл өлшемін",
-      "Дизайн сапасын"
-    ],
-    "correct": "Тестпен қамтылған пайызды"
-  },
-  {
-    "question": "Кодты форматтау құралы:",
-    "options": [
-      "Linter",
-      "Printer",
-      "Scanner",
-      "Monitor",
-      "Router"
-    ],
-    "correct": "Linter"
-  },
-  {
-    "question": "Static analysis қашан жасалады?",
-    "options": [
-      "Орындаусыз",
-      "Орындау кезінде",
-      "Интернетпен",
-      "Серверде",
-      "Принтерде"
-    ],
-    "correct": "Орындаусыз"
-  },
-  {
-    "question": "Dynamic testing қашан жасалады?",
-    "options": [
-      "Орындау кезінде",
-      "Код жазғанда",
-      "Форматтағанда",
-      "Архивтегенде",
-      "Дизайнда"
-    ],
-    "correct": "Орындау кезінде"
-  },
-  {
-    "question": "Code smell дегеніміз:",
-    "options": [
-      "Жақсы код",
-      "Жаман құрылым белгісі",
-      "Қате хабарлама",
-      "Айнымалы",
-      "Файл"
-    ],
-    "correct": "Жақсы код"
-  },
-  {
-    "question": "Refactoring кезінде:",
-    "options": [
-      "Функционал өзгермейді",
-      "Жаңа қате қосылады",
-      "Код жойылады",
-      "Интернет қосылады",
-      "Компьютер өшеді"
-    ],
-    "correct": "Функционал өзгермейді"
-  },
-  {
-    "question": "Қай тест жүйені толық тексереді?",
-    "options": [
-      "Unit test",
-      "Integration test",
-      "System test",
-      "Static test",
-      "Manual test"
-    ],
-    "correct": "System test"
-  },
-  {
-    "question": "Integration test не тексереді?",
-    "options": [
-      "Бір функцияны",
-      "Модульдердің байланысын",
-      "Дизайнды",
-      "Интернетті",
-      "Файлды"
-    ],
-    "correct": "Модульдердің байланысын"
-  },
-  {
-    "question": "Manual testing дегеніміз:",
-    "options": [
-      "Қолмен тексеру",
-      "Автоматты тексеру",
-      "Архивтеу",
-      "Форматтау",
-      "Орнату"
-    ],
-    "correct": "Қолмен тексеру"
-  },
-  {
-    "question": "Automated testing артықшылығы:",
-    "options": [
-      "Жылдамдық",
-      "Қате көбейту",
-      "Файл жою",
-      "Интернет өшіру",
-      "Дизайн бұзу"
-    ],
-    "correct": "Жылдамдық"
-  },
-  {
-    "question": "Қате қайталанса:",
-    "options": [
-      "Себебін терең талдау керек",
-      "Елемеу керек",
-      "Файл жою керек",
-      "Компьютер ауыстыру керек",
-      "Интернет қосу керек"
-    ],
-    "correct": "Себебін терең талдау керек"
-  },
-  {
-    "question": "Clean code мақсаты:",
-    "options": [
-      "Оқылуы жеңіл код",
-      "Ұзын код",
-      "Қате код",
-      "Форматсыз код",
-      "Архивтелген код"
-    ],
-    "correct": "Оқылуы жеңіл код"
-  },
-  {
-    "question": "DRY принципі:",
-    "options": [
-      "Қайталауды азайту",
-      "Қате қосу",
-      "Файл жою",
-      "Интернет қосу",
-      "Дизайн өзгерту"
-    ],
-    "correct": "Қайталауды азайту"
-  },
-  {
-    "question": "SOLID принциптері:",
-    "options": [
-      "Дизайн қағидалары",
-      "Қате түрлері",
-      "Файл атауы",
-      "Интернет түрі",
-      "Айнымалы атауы"
-    ],
-    "correct": "Дизайн қағидалары"
-  },
-  {
-    "question": "Код сапасын арттыру үшін:",
-    "options": [
-      "Тестілеу жүргізу",
-      "Комментарийсіз жазу",
-      "Барлығын қысқарту",
-      "Форматтамау",
-      "Тексермеу"
-    ],
-    "correct": "Тестілеу жүргізу"
-  },
-  {
-    "question": "Exception түрін нақты көрсету:",
-    "options": [
-      "Жақсы тәжірибе",
-      "Қате",
-      "Міндет емес",
-      "Интернетке байланысты",
-      "Файлға байланысты"
-    ],
-    "correct": "Жақсы тәжірибе"
-  },
-  {
-    "question": "Логикалық қате көбіне:",
-    "options": [
-      "Есептеуде болады",
-      "Интернетте болады",
-      "Файлда болады",
-      "Серверде болады",
-      "Принтерде болады"
-    ],
-    "correct": "Есептеуде болады"
-  },
-  {
-    "question": "Кодты қайта пайдалану:",
-    "options": [
-      "Қайта қолдану",
-      "Жою",
-      "Архивтеу",
-      "Форматтау",
-      "Өшіру"
-    ],
-    "correct": "Форматтау"
-  },
-  {
-    "question": "CI/CD мақсаты:",
-    "options": [
-      "Автоматты құрастыру және тексеру",
-      "Файл жою",
-      "Интернет өшіру",
-      "Дизайн өзгерту",
-      "Компьютер өшіру"
-    ],
-    "correct": "Автоматты құрастыру және тексеру"
-  },
-  {
-    "question": "Bug report құрамына кіреді:",
-    "options": [
-      "Қате сипаттамасы",
-      "Музыка",
-      "Видео",
-      "Сурет салу",
-      "Архив"
-    ],
-    "correct": "Қате сипаттамасы"
-  },
-  {
-    "question": "Қате табылған орта:",
-    "options": [
-      "Production",
-      "Test",
-      "Dev",
-      "Барлығы мүмкін",
-      "Ешқайсысы"
-    ],
-    "correct": "Барлығы мүмкін"
-  },
-  {
-    "question": "Code review кім жасайды?",
-    "options": [
-      "Басқа бағдарламашы",
-      "Клиент",
-      "Дизайнер",
-      "Қолданушы",
-      "Принтер"
-    ],
-    "correct": "Қолданушы"
-  },
-  {
-    "question": "Тестілеу кезеңі:",
-    "options": [
-      "Жобалау алдында",
-      "Әзірлеу кезінде және кейін",
-      "Орнатудан кейін ғана",
-      "Архивтегенде",
-      "Форматтағанда"
-    ],
-    "correct": "Әзірлеу кезінде және кейін"
-  },
-  {
-    "question": "Қатені түзеткен соң:",
-    "options": [
-      "Қайта тестілеу керек",
-      "Елемеу керек",
-      "Файл жою керек",
-      "Интернет өшіру керек",
-      "Компьютер ауыстыру керек"
-    ],
-    "correct": "Қайта тестілеу керек"
-  },
-  {
-    "question": "Бағдарламалық код сапасының негізгі көрсеткіші:",
-    "options": [
-      "Қатесіз жұмыс",
-      "Ұзындығы",
-      "Түсі",
-      "Форматы",
-      "Архив көлемі"
-    ],
-    "correct": "Қатесіз жұмыс"
+/* ═══════════════════════════════════════════
+   AYANKZ TEST — SCRIPT.JS
+═══════════════════════════════════════════ */
+
+// ─── State ───────────────────────────────
+let questions = [];
+let shuffledQuestions = [];
+let currentIndex = 0;
+let score = 0;
+let timerInterval = null;
+let timeLeft = 30 * 60; // 30 minutes
+let sessionStart = null;
+let eyeRestShown = false;
+let isDark = false;
+let isWarm = false;
+let isLargeFont = false;
+
+// ─── Init ─────────────────────────────────
+window.addEventListener('DOMContentLoaded', () => {
+  loadQuestions();
+  protectContent();
+});
+
+// ─── Load questions ────────────────────────
+async function loadQuestions() {
+  try {
+    const res = await fetch('questions.json');
+    questions = await res.json();
+  } catch {
+    // fallback: questions.json not found, use empty
+    questions = [];
   }
-    ]
+}
+
+// ─── Page navigation ──────────────────────
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+
+// ─── PASSWORD ─────────────────────────────
+function checkPassword() {
+  const val = document.getElementById('password-input').value.trim();
+  const err = document.getElementById('login-error');
+  if (val === '7777') {
+    err.classList.add('hidden');
+    showPage('page-home');
+    sessionStart = Date.now();
+  } else {
+    err.classList.remove('hidden');
+    document.getElementById('password-input').value = '';
+    document.getElementById('password-input').focus();
+  }
+}
+
+// Enter key on password
+document.addEventListener('keydown', (e) => {
+  if (document.getElementById('page-login').classList.contains('active') && e.key === 'Enter') {
+    checkPassword();
+  }
+});
+
+// ─── START TEST ───────────────────────────
+function startTest() {
+  if (!questions.length) { showToast('Сұрақтар жүктелмеді!'); return; }
+
+  // Shuffle questions
+  shuffledQuestions = shuffle([...questions]);
+  currentIndex = 0;
+  score = 0;
+  timeLeft = 30 * 60;
+  sessionStart = Date.now();
+  eyeRestShown = false;
+
+  showPage('page-test');
+  renderQuestion();
+  startTimer();
+  startEyeRestWatch();
+}
+
+// ─── RENDER QUESTION ──────────────────────
+function renderQuestion() {
+  const q = shuffledQuestions[currentIndex];
+  const total = shuffledQuestions.length;
+
+  document.getElementById('question-counter').textContent = `${currentIndex + 1} / ${total}`;
+  document.getElementById('question-num-label').textContent = `Сұрақ ${currentIndex + 1}`;
+  document.getElementById('question-text').textContent = q.question;
+  document.getElementById('score-live').textContent = `✅ ${score}`;
+
+  // Progress bar
+  document.getElementById('progress-bar').style.width = `${(currentIndex / total) * 100}%`;
+
+  // Shuffle options
+  const optionIndices = shuffle(q.options.map((_, i) => i));
+  const correctOriginalIndex = q.correct;
+
+  const container = document.getElementById('options-list');
+  container.innerHTML = '';
+
+  const letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G'];
+
+  optionIndices.forEach((origIdx, pos) => {
+    const btn = document.createElement('button');
+    btn.className = 'option-btn';
+    btn.setAttribute('data-orig', origIdx);
+    btn.innerHTML = `<span class="option-letter">${letters[pos]}</span><span>${q.options[origIdx]}</span>`;
+    btn.onclick = () => handleAnswer(btn, origIdx, correctOriginalIndex);
+    container.appendChild(btn);
+  });
+
+  // Animate card
+  const card = document.getElementById('question-card');
+  card.style.animation = 'none';
+  void card.offsetWidth;
+  card.style.animation = 'fadeIn 0.35s ease';
+}
+
+// ─── HANDLE ANSWER ────────────────────────
+function handleAnswer(clickedBtn, selectedOrigIdx, correctOrigIdx) {
+  const allBtns = document.querySelectorAll('.option-btn');
+
+  // Disable all
+  allBtns.forEach(b => b.classList.add('disabled'));
+
+  const isCorrect = selectedOrigIdx === correctOrigIdx;
+
+  if (isCorrect) {
+    clickedBtn.classList.add('correct');
+    score++;
+    document.getElementById('score-live').textContent = `✅ ${score}`;
+  } else {
+    clickedBtn.classList.add('wrong');
+    // Show correct answer
+    allBtns.forEach(b => {
+      if (parseInt(b.getAttribute('data-orig')) === correctOrigIdx) {
+        b.classList.add('correct');
+      }
+    });
+  }
+
+  // Auto advance
+  setTimeout(() => {
+    currentIndex++;
+    if (currentIndex >= shuffledQuestions.length) {
+      finishTest();
+    } else {
+      renderQuestion();
+    }
+  }, isCorrect ? 1200 : 1800);
+}
+
+// ─── TIMER ────────────────────────────────
+function startTimer() {
+  clearInterval(timerInterval);
+  updateTimerDisplay();
+  timerInterval = setInterval(() => {
+    timeLeft--;
+    updateTimerDisplay();
+    if (timeLeft <= 0) {
+      clearInterval(timerInterval);
+      finishTest(true);
+    }
+  }, 1000);
+}
+
+function updateTimerDisplay() {
+  const m = Math.floor(timeLeft / 60).toString().padStart(2, '0');
+  const s = (timeLeft % 60).toString().padStart(2, '0');
+  const el = document.getElementById('timer');
+  el.textContent = `⏱ ${m}:${s}`;
+  el.classList.toggle('danger', timeLeft <= 120);
+}
+
+// ─── EYE REST ─────────────────────────────
+function startEyeRestWatch() {
+  setTimeout(() => {
+    if (!eyeRestShown && document.getElementById('page-test').classList.contains('active')) {
+      document.getElementById('eye-rest-banner').classList.remove('hidden');
+      eyeRestShown = true;
+    }
+  }, 20 * 60 * 1000); // 20 minutes
+}
+
+function dismissEyeRest() {
+  document.getElementById('eye-rest-banner').classList.add('hidden');
+}
+
+// ─── FINISH TEST ──────────────────────────
+function finishTest(timeout = false) {
+  clearInterval(timerInterval);
+  const total = shuffledQuestions.length;
+  const wrong = total - score;
+  const pct = Math.round((score / total) * 100);
+
+  // Result page
+  document.getElementById('res-correct').textContent = score;
+  document.getElementById('res-wrong').textContent = wrong;
+  document.getElementById('res-total').textContent = total;
+  document.getElementById('result-score-big').textContent = `${score} / ${total}`;
+  document.getElementById('result-percent').textContent = `${pct}%`;
+  document.getElementById('result-title').textContent = timeout ? 'Уақыт бітті!' : getResultTitle(pct);
+  document.getElementById('result-emoji').textContent = getResultEmoji(pct, timeout);
+
+  showPage('page-result');
+
+  // Animate result bar
+  setTimeout(() => {
+    document.getElementById('result-bar').style.width = `${pct}%`;
+  }, 300);
+}
+
+function getResultTitle(pct) {
+  if (pct >= 90) return 'Керемет нәтиже! 🎉';
+  if (pct >= 70) return 'Жақсы нәтиже!';
+  if (pct >= 50) return 'Орташа нәтиже';
+  return 'Қайта оқыңыз';
+}
+function getResultEmoji(pct, timeout) {
+  if (timeout) return '⏰';
+  if (pct >= 90) return '🏆';
+  if (pct >= 70) return '🎯';
+  if (pct >= 50) return '📚';
+  return '💪';
+}
+
+// ─── RETAKE / HOME ────────────────────────
+function retakeTest() {
+  startTest();
+}
+function goHome() {
+  clearInterval(timerInterval);
+  showPage('page-home');
+}
+
+// ─── EYE MODES ────────────────────────────
+function toggleDark() {
+  isDark = !isDark;
+  if (isDark) { isWarm = false; document.body.classList.remove('warm'); }
+  document.body.classList.toggle('dark', isDark);
+  document.querySelectorAll('[onclick="toggleDark()"]').forEach(b => b.classList.toggle('active', isDark));
+}
+function toggleWarm() {
+  isWarm = !isWarm;
+  if (isWarm) { isDark = false; document.body.classList.remove('dark'); }
+  document.body.classList.toggle('warm', isWarm);
+  document.querySelectorAll('[onclick="toggleWarm()"]').forEach(b => b.classList.toggle('active', isWarm));
+}
+function toggleFont() {
+  isLargeFont = !isLargeFont;
+  document.body.classList.toggle('large-font', isLargeFont);
+  document.querySelectorAll('[onclick="toggleFont()"]').forEach(b => b.classList.toggle('active', isLargeFont));
+}
+
+// ─── SHUFFLE ──────────────────────────────
+function shuffle(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+// ─── TOAST ────────────────────────────────
+let toastTimer = null;
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.remove('hidden');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.add('hidden'), 2500);
+}
+
+// ─── CONTENT PROTECTION ───────────────────
+function protectContent() {
+  // Disable right click
+  document.addEventListener('contextmenu', e => {
+    e.preventDefault();
+    showToast('🚫 Мәтінді көшіруге болмайды');
+  });
+
+  // Disable copy/paste/cut keyboard shortcuts and view source
+  document.addEventListener('keydown', e => {
+    const ctrl = e.ctrlKey || e.metaKey;
+    if (ctrl && ['c','v','x','u','s'].includes(e.key.toLowerCase())) {
+      e.preventDefault();
+      showToast('🚫 Мәтінді көшіруге болмайды');
+      return false;
+    }
+    // F12, DevTools
+    if (e.key === 'F12') {
+      e.preventDefault();
+    }
+  });
+
+  // Disable copy event
+  document.addEventListener('copy', e => {
+    e.preventDefault();
+    showToast('🚫 Мәтінді көшіруге болмайды');
+  });
+
+  // Disable paste event
+  document.addEventListener('paste', e => {
+    e.preventDefault();
+    showToast('🚫 Мәтінді көшіруге болмайды');
+  });
+
+  // Disable cut event
+  document.addEventListener('cut', e => {
+    e.preventDefault();
+    showToast('🚫 Мәтінді көшіруге болмайды');
+  });
+
+  // Disable text selection on certain elements
+  document.addEventListener('selectstart', e => {
+    if (e.target.classList.contains('question-text') || e.target.closest('.options-list')) {
+      e.preventDefault();
+    }
+  });
+}
