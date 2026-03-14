@@ -1,46 +1,163 @@
 <!DOCTYPE html>
 <html lang="kk">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Онлайн Тест</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Дебаггинг Теcті | Ayan KZ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body oncontextmenu="return false;">
-  <!-- Пароль енгізу беті -->
-  <div id="login-page" class="page">
-    <h2>Пароль енгізіңіз</h2>
-    <input type="password" id="password-input" placeholder="Пароль">
-    <button onclick="checkPassword()">Кіру</button>
-    <p id="login-message"></p>
+<body>
+
+<!-- ═══════════════ СТРАНИЦЫ ═══════════════ -->
+
+<!-- 1. Пароль беті -->
+<div id="page-login" class="page active">
+  <div class="login-card">
+    <div class="login-logo">
+      <div class="logo-ring"></div>
+      <span class="logo-icon">🔐</span>
+    </div>
+    <h1 class="login-title">Тестке кіру</h1>
+    <p class="login-sub">Жалғастыру үшін пароль енгізіңіз</p>
+    <div class="input-wrap">
+      <input id="password-input" type="password" placeholder="••••" maxlength="8" autocomplete="off" />
+      <button id="login-btn" onclick="checkPassword()">Кіру →</button>
+    </div>
+    <p id="login-error" class="login-error hidden">⚠️ Пароль қате, қайта енгізіңіз</p>
+  </div>
+  <div class="bg-circles">
+    <div class="circle c1"></div>
+    <div class="circle c2"></div>
+    <div class="circle c3"></div>
+  </div>
+</div>
+
+<!-- 2. Басты бет -->
+<div id="page-home" class="page">
+  <div class="topbar">
+    <div class="topbar-left">
+      <span class="brand">🧠 AyanTest</span>
+    </div>
+    <div class="topbar-right">
+      <button class="icon-btn" id="btn-dark" title="Қараңғы режим" onclick="toggleDark()">🌙</button>
+      <button class="icon-btn" id="btn-warm" title="Жылы режим" onclick="toggleWarm()">☀️</button>
+      <button class="icon-btn" id="btn-font" title="Үлкен шрифт" onclick="toggleFont()">Аа</button>
+    </div>
   </div>
 
-  <!-- Басты бет -->
-  <div id="main-page" class="page hidden">
-    <h1>Онлайн Тест</h1>
-    <button onclick="startTest()">Тестті бастау</button>
+  <div class="home-hero">
+    <div class="hero-badge">Бағдарламалау</div>
+    <h1 class="hero-title">Кодтағы ақауларды<br><span class="accent">жою теcті</span></h1>
+    <p class="hero-desc">Синтаксис, логика, runtime қателер және debugging тәсілдері бойынша <strong>100 сұрақ</strong></p>
+    <div class="hero-stats">
+      <div class="stat-pill">📋 100 сұрақ</div>
+      <div class="stat-pill">⏱️ 30 минут</div>
+      <div class="stat-pill">🎲 Кездейсоқ тәртіп</div>
+    </div>
+    <button class="btn-start" onclick="startTest()">Тестті бастау ▶</button>
   </div>
 
-  <!-- Тест беті -->
-  <div id="test-page" class="page hidden">
-    <div id="progress-bar"></div>
-    <div id="timer"></div>
-    <h3 id="question-number"></h3>
-    <p id="question-text"></p>
-    <div id="answers"></div>
+  <div class="features-grid">
+    <div class="feat-card">
+      <span class="feat-icon">🎯</span>
+      <h3>Дереу нәтиже</h3>
+      <p>Жауап таңдаған бойда тексеріледі</p>
+    </div>
+    <div class="feat-card">
+      <span class="feat-icon">🔀</span>
+      <h3>Кездейсоқ сұрақтар</h3>
+      <p>Әр тапсыру ерекше болады</p>
+    </div>
+    <div class="feat-card">
+      <span class="feat-icon">🛡️</span>
+      <h3>Қауіпсіз режим</h3>
+      <p>Көшіру мен paste блокталған</p>
+    </div>
+    <div class="feat-card">
+      <span class="feat-icon">👁️</span>
+      <h3>Көз қорғау</h3>
+      <p>Dark mode, жылы режим, үлкен шрифт</p>
+    </div>
   </div>
 
-  <!-- Нәтиже беті -->
-  <div id="result-page" class="page hidden">
-    <h2>Нәтиже</h2>
-    <p id="result-summary"></p>
-    <button onclick="restartTest()">Қайта тапсыру</button>
+  <footer class="footer">Жасаған — <strong>Ayan KZ</strong></footer>
+</div>
+
+<!-- 3. Тест беті -->
+<div id="page-test" class="page">
+  <div class="test-header">
+    <div class="test-header-top">
+      <span class="brand small">🧠 AyanTest</span>
+      <div class="topbar-right">
+        <button class="icon-btn" onclick="toggleDark()">🌙</button>
+        <button class="icon-btn" onclick="toggleWarm()">☀️</button>
+        <button class="icon-btn" onclick="toggleFont()">Аа</button>
+      </div>
+    </div>
+    <div class="test-meta">
+      <span id="question-counter" class="q-counter">1 / 100</span>
+      <div id="timer" class="timer">⏱ 30:00</div>
+      <span id="score-live" class="score-live">✅ 0</span>
+    </div>
+    <div class="progress-bar-wrap">
+      <div id="progress-bar" class="progress-bar" style="width:0%"></div>
+    </div>
   </div>
 
-  <footer>
-    Жасаған — Ayan KZ
-  </footer>
+  <div class="question-area">
+    <div id="question-card" class="question-card">
+      <p id="question-num-label" class="q-num-label">Сұрақ 1</p>
+      <h2 id="question-text" class="question-text">...</h2>
+      <div id="options-list" class="options-list"></div>
+    </div>
+  </div>
 
-  <script src="script.js"></script>
+  <div id="eye-rest-banner" class="eye-rest-banner hidden">
+    👀 Көзіңізді демалдыру үшін 1–2 минут үзіліс жасаңыз
+    <button onclick="dismissEyeRest()">✕</button>
+  </div>
+
+  <footer class="footer">Жасаған — <strong>Ayan KZ</strong></footer>
+</div>
+
+<!-- 4. Нәтиже беті -->
+<div id="page-result" class="page">
+  <div class="result-wrap">
+    <div class="result-card">
+      <div id="result-emoji" class="result-emoji">🏆</div>
+      <h1 class="result-title" id="result-title">Нәтиже</h1>
+      <div class="result-score-big" id="result-score-big">— / —</div>
+      <div class="result-percent" id="result-percent">—%</div>
+      <div class="result-stats">
+        <div class="r-stat green">
+          <span class="r-stat-num" id="res-correct">0</span>
+          <span class="r-stat-label">Дұрыс</span>
+        </div>
+        <div class="r-stat red">
+          <span class="r-stat-num" id="res-wrong">0</span>
+          <span class="r-stat-label">Қате</span>
+        </div>
+        <div class="r-stat blue">
+          <span class="r-stat-num" id="res-total">0</span>
+          <span class="r-stat-label">Барлығы</span>
+        </div>
+      </div>
+      <div class="result-bar-wrap">
+        <div id="result-bar" class="result-bar-fill"></div>
+      </div>
+      <button class="btn-start" onclick="retakeTest()">🔄 Қайта тапсыру</button>
+      <button class="btn-home" onclick="goHome()">🏠 Басты бет</button>
+    </div>
+  </div>
+  <footer class="footer">Жасаған — <strong>Ayan KZ</strong></footer>
+</div>
+
+<!-- Toast notification -->
+<div id="toast" class="toast hidden"></div>
+
+<script src="script.js"></script>
 </body>
 </html>
